@@ -1,0 +1,30 @@
+
+<%= render :partial => "minishow", :locals => { :misale => @misale } %>
+
+<p>
+	<b>comments:</b>
+</p>
+
+<%= simple_form_for(@misale) do |f| %>
+	<% f.fields_for :comments do |builder| %>
+		<% if builder.object.nickname.nil? %>
+			<p>
+				<%= builder.input :nickname %>
+				<%= builder.input :phone %>
+				<%= builder.input :email %>
+				<%= builder.input :comment %>
+			</p>
+		<% else %>
+			<p>
+				<%= builder.object.nickname %>[<%= builder.object.created_at %>]
+			</p>
+			<p>
+				<%= builder.object.comment %>
+			</p>
+		<% end %>
+	<% end %>
+	
+	<div class="actions">
+		<%= f.button :submit, :value => 'submit' %>
+	</div>
+<% end %>

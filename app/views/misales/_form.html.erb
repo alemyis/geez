@@ -1,0 +1,23 @@
+<%= simple_form_for(@misale) do |f| %>
+  <% if @misale.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@misale.errors.count, "error") %> prohibited this misale from being saved:</h2>
+
+      <ul>
+      <% @misale.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <%= f.input :head %>
+	<%= f.input :tail %>
+    <%= f.input :illustration %>
+    <%= f.input :tag %>
+    <%= f.input :ye %>
+    <%= f.input :ne %>
+  <div class="actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

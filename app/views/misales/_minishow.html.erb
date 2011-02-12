@@ -1,0 +1,27 @@
+<div>
+  <%= misale.head %>
+  <br/>&nbsp;&nbsp;&nbsp;
+  <%= misale.tail %>
+</div>
+
+<div>
+  <b>Tag:</b>
+  <%= misale.tag %>
+  &nbsp;&nbsp;&nbsp;
+  <b>Ye:</b>
+  <%= misale.ye %>
+  &nbsp;&nbsp;&nbsp;
+  <b>Ne:</b>
+  <%= misale.ne %>
+</div>
+<div>
+ 	<img id='illustration' src='<%= misale.illustration %>' alt='illustration'/>
+</div>
+
+<div>
+    <%= link_to 'link', misale %>
+	<%= link_to 'edit', edit_misale_path(misale) %>
+    <%= link_to 'comments', misale %>
+</div>
+
+

@@ -1,0 +1,20 @@
+<p>
+  <b># <%= challenge.id %>:</b>
+  <%= challenge.name %>
+</p>
+
+<p>
+  <%= challenge.note %>
+</p>
+
+<p>
+  <%= challenge.get_status %>
+</p>
+
+<div>
+	<%= link_to 'link', challenge %>
+    <%= link_to 'edit', edit_challenge_path(challenge) %>
+    <%= link_to 'posts', challenge %>
+</div>
+
+<hr/>

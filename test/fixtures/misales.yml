@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  head: MyString
+  tail: MyString
+  illustration: MyString
+  tag: MyString
+  ye: 1
+  ne: 1
+
+two:
+  head: MyString
+  tail: MyString
+  illustration: MyString
+  tag: MyString
+  ye: 1
+  ne: 1
