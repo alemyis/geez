@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<%= render :partial => 'header', :locals => {:challenge => @challenge }%>
+
+<p style='display:none;'>
+	Tags: 
+	<% for misale in @challenge.misales %>
+		<%= misale.tag %>
+	<% end %>	
+</p>
+
+<% for misale in @challenge.misales %>
+	<p>
+		<%= render :partial => "misales/minishow", :locals => { :misale => misale } %>
+	</p>
+<% end %>	
+
+<%= link_to 'Edit', edit_challenge_path(@challenge) %> |
+<%= link_to 'Back', challenges_path %>
