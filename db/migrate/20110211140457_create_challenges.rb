@@ -1,7 +1,7 @@
 class CreateChallenges < ActiveRecord::Migration
   def self.up
     create_table :challenges do |t|
-      t.string :name
+      t.string :title
       t.text :note
       t.integer :status, :default => '0'
       

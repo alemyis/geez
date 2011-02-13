@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(:version => 20110212183027) do
   end
 
   create_table "challenges", :force => true do |t|
-    t.string   "name"
+    t.string   "title"
     t.text     "note"
     t.integer  "status",     :default => 0
     t.datetime "created_at"

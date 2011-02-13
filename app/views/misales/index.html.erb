@@ -17,7 +17,11 @@
   <tr>
     <td><%= misale.head %></td>
     <td><%= misale.tail %></td>
-    <td><%= misale.illustration %></td>
+    <td>
+    	<% unless misale.illustration.empty? then %>
+    		<img id='tinyillustration' src='<%= misale.illustration %>' alt='illustration' />
+		<% end %>
+	</td>
     <td><%= misale.tag %></td>
     <td><%= misale.ye %></td>
     <td><%= misale.ne %></td>

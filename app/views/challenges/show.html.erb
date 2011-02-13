@@ -9,11 +9,14 @@
 	<% end %>	
 </p>
 
-<% for misale in @challenge.misales %>
-	<p>
-		<%= render :partial => "misales/minishow", :locals => { :misale => misale } %>
-	</p>
-<% end %>	
-
+<% if @challenge.status == 1 %>
+	<%= render :partial => "active" %>
+<% else %>
+	<% for misale in @challenge.misales %>
+		<p>
+			<%= render :partial => "misales/minishow", :locals => { :misale => misale } %>
+		</p>
+	<% end %>	
+<% end %>
 <%= link_to 'Edit', edit_challenge_path(@challenge) %> |
 <%= link_to 'Back', challenges_path %>

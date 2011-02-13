@@ -1,19 +1,7 @@
-<p id="notice"><%= notice %></p>
-
-<%= render :partial => 'header', :locals => {:challenge => @challenge }%>
-
-<p style='display:none;'>
-	Tags: 
-	<% for misale in @challenge.misales %>
-		<%= misale.tag %>
-	<% end %>	
-</p>
-
-<% for misale in @challenge.misales %>
-	<p>
-		<%= render :partial => "misales/minishow", :locals => { :misale => misale } %>
-	</p>
-<% end %>	
-
-<%= link_to 'Edit', edit_challenge_path(@challenge) %> |
-<%= link_to 'Back', challenges_path %>
+<%= simple_form_for(@challenge) do |f_challenge| %>
+  
+	<% f_challenge.fields_for :categorizations do |f_categorization| %>
+		<%= render 'categorization_fields', :f => f_categorization %>
+	<% end %>
+	<%= f_challenge.button :submit, :value => 'submit' %>
+<% end %>

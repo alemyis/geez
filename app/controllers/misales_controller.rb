@@ -14,8 +14,9 @@ class MisalesController < ApplicationController
   # GET /misales/1.xml
   def show
     @misale = Misale.find(params[:id])
-    @misale.comments.build
-
+    
+    @comment = @misale.comments.build
+    
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @misale }

@@ -11,7 +11,7 @@
     </div>
   <% end %>
 
-  <%= f.input :name, :label => 'Title'%>
+  <%= f.input :title, :label => 'Title'%>
   <%= f.input :note, :row => 3 %>
   <br/>
   <%= f.collection_radio :status,  [[0, 'Created'],[1, 'Active'], [3, 'Closed']], :first, :last, :label => 'Status' %>

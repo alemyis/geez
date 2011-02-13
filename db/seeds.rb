@@ -16,8 +16,8 @@ contact1 = Contact.create(:nickname => 'Alex', :email => 'alemyis@gmail.com', :p
 contact2 = Contact.create(:nickname => 'Zoro', :email => 'zoro@gmail.com', :phone => 12341234)
 contact3 = Contact.create(:nickname => 'Ekele', :email => 'ekele@gmail.com', :phone => 12341234)
 
-challenge1 = Challenge.create(:name => 'ሳምንት 1', :note => 'የሳምንት 1 ጥያቄዎች')
-challenge2 = Challenge.create(:name => 'ሳምንት 2', :note => 'የሳምንት 2 ጥያቄዎች', :status => 1)
+challenge1 = Challenge.create(:title => 'ሳምንት 1', :note => 'የሳምንት 1 ጥያቄዎች')
+challenge2 = Challenge.create(:title => 'ሳምንት 2', :note => 'የሳምንት 2 ጥያቄዎች', :status => 1)
 
 categorization1 = Categorization.create(:misale_id => misale1.id, :challenge_id => challenge1.id,:position => 1)
 categorization2 = Categorization.create(:misale_id => misale2.id, :challenge_id => challenge1.id,:position => 2)
@@ -48,10 +48,6 @@ answer12 = Answer.create(:contact_id => contact3.id, :categorization_id => categ
 answer13 = Answer.create(:contact_id => contact3.id, :categorization_id => categorization8.id, :response => 'asdfa asdf cat8-cont3', :illustration => '')
 answer14 = Answer.create(:contact_id => contact3.id, :categorization_id => categorization9.id, :response => 'asdfa asdf cat9-cont3', :illustration => '')
 answer15 = Answer.create(:contact_id => contact3.id, :categorization_id => categorization10.id, :response => 'asdfa asdf cat10-cont3', :illustration => '')
-
-#contact1 = Contact.create(:nickname => 'Alex', :email => 'alemyis@gmail.com', :phone => 12341234)
-#contact2 = Contact.create(:nickname => 'Zoro', :email => 'zoro@gmail.com', :phone => 12341234)
-#contact3 = Contact.create(:nickname => 'Ekele', :email => 'ekele@gmail.com', :phone => 12341234)
 
 #comment1_1 = Comment.create(:contact_id => contact1.id, :comment =>'orem ipsum dolor sit amet, consectetur adipiscing elit. Nulla tortor erat, aliquam sed dignissim non, vestibulum sit amet eros. Duis a nisl lacus. Nunc condimentum nulla nec libero varius posuere imperdiet mi auctor. Aenean convallis sem id augue dictum ornare. Etiam elementum facilisis purus ut tincidunt.', :misale_id => misale1.id)
 #comment1_2 = Comment.create(:contact_id => contact2.id, :comment =>'orem ipsum dolor sit amet, consectetur adipiscing elit. Nulla tortor erat, aliquam sed dignissim non, vestibulum sit amet eros. Duis a nisl lacus. Nunc condimentum nulla nec libero varius posuere imperdiet mi auctor. Aenean convallis sem id augue dictum ornare. Etiam elementum facilisis purus ut tincidunt.', :misale_id => misale1.id)

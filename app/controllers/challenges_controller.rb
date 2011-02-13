@@ -14,7 +14,11 @@ class ChallengesController < ApplicationController
   # GET /challenges/1.xml
   def show
     @challenge = Challenge.find(params[:id])
-
+    if @challenge.status == 1 then
+      for categorization in @challenge.categorizations do
+        categorization.answers.build(:contact_id => 1)
+      end
+    end
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @challenge }
@@ -25,7 +29,9 @@ class ChallengesController < ApplicationController
   # GET /challenges/new.xml
   def new
     @challenge = Challenge.new
-    5.times { @challenge.categorizations.build }
+    5.times do 
+      categorization = @challenge.categorizations.build 
+    end 
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @challenge }

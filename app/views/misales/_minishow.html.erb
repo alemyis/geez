@@ -18,6 +18,15 @@
  	<img id='illustration' src='<%= misale.illustration %>' alt='illustration'/>
 </div>
 
+<% for categorization in misale.categorizations %>
+	<b>responses:</b>
+	<ol>
+	<% for answer in categorization.answers %>
+		<li><%= "[#{answer.contact.nickname}] #{answer.response}" %></li>
+	<% end %>
+	</ol>
+<% end %>
+
 <div>
     <%= link_to 'link', misale %>
 	<%= link_to 'edit', edit_misale_path(misale) %>
@@ -25,3 +34,5 @@
 </div>
 
 
+<br/>
+<hr/>
