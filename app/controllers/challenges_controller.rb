@@ -2,8 +2,18 @@ class ChallengesController < ApplicationController
   # GET /challenges
   # GET /challenges.xml
   def index
-    @challenges = Challenge.all
-
+    @page_size = params[:size].nil? ? 1 : params[:size].to_i
+    @challenges = Challenge.all.paginate(:per_page => @page_size, :page => params[:page])
+    
+    # for the active once - init answers
+    for challenge in @challenges do
+      if challenge.status == 1 then
+        for categorization in challenge.categorizations do
+          categorization.answers.build(:contact_id => 1)
+        end
+      end
+    end 
+    
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @challenges }

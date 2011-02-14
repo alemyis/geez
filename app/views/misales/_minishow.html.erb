@@ -1,7 +1,6 @@
 <div>
-  <%= misale.head %>
-  <br/>&nbsp;&nbsp;&nbsp;
-  <%= misale.tail %>
+  <div class='geeztext'><%= misale.head %><div>
+  <div class='geeztext tailtext'><%= misale.tail %></div>
 </div>
 
 <div>
@@ -14,9 +13,12 @@
   <b>Ne:</b>
   <%= misale.ne %>
 </div>
-<div>
- 	<img id='illustration' src='<%= misale.illustration %>' alt='illustration'/>
-</div>
+
+<% unless misale.illustration.empty? then %>
+	<div>
+	 	<img id='illustration' src='<%= misale.illustration %>' alt='illustration'/>
+	</div>
+<% end %>
 
 <% for categorization in misale.categorizations %>
 	<b>responses:</b>

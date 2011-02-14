@@ -2,7 +2,7 @@
 	<b>comments:</b>
 </p>
 
-<%= simple_form_for(@misale) do |f| %>
+<%= simple_form_for(misale) do |f| %>
 	<% f.fields_for :comments do |builder| %>
 		<% if builder.object.new_record? %>
 			<p>

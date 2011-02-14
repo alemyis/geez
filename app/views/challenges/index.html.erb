@@ -1,9 +1,11 @@
-<h1>Listing challenges</h1>
+<%= will_paginate %>
+<%= link_to 'New Challenge', new_challenge_path %>
 
 <% @challenges.each do |challenge| %>
-	<%= render :partial => 'header', :locals => {:challenge => challenge }%>
+	<%= render :partial => 'sharedshow', :locals => {:challenge => challenge }%>
 <% end %>
 
 <br />
+<%= will_paginate %>
+<br/>
 
-<%= link_to 'New Challenge', new_challenge_path %>

@@ -3,6 +3,7 @@
 	<%= f.hidden_field :position, :value => f.object.position %>
 	<% f.fields_for :answers do |f_answer| %>
 		<% if f_answer.object.new_record? then %>
+			<%= f.object.misale.head %>
 			<%= render 'answer_fields', :f => f_answer%>
 		<% end %>
 	<% end %>

@@ -1,37 +1,12 @@
-<h1>Listing misales</h1>
 
-<table>
-  <tr>
-    <th>Head</th>
-    <th>Tail</th>
-    <th>Illustration</th>
-    <th>Tag</th>
-    <th>Ye</th>
-    <th>Ne</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<%= will_paginate %>
+<br/>
 
 <% @misales.each do |misale| %>
-  <tr>
-    <td><%= misale.head %></td>
-    <td><%= misale.tail %></td>
-    <td>
-    	<% unless misale.illustration.empty? then %>
-    		<img id='tinyillustration' src='<%= misale.illustration %>' alt='illustration' />
-		<% end %>
-	</td>
-    <td><%= misale.tag %></td>
-    <td><%= misale.ye %></td>
-    <td><%= misale.ne %></td>
-    <td><%= link_to 'Show', misale %></td>
-    <td><%= link_to 'Edit', edit_misale_path(misale) %></td>
-    <td><%= link_to 'Destroy', misale, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+	<%= render :partial => 'sharedshow', :locals => {:misale => misale} %>
 <% end %>
-</table>
-
 <br />
 
+<%= will_paginate %>
+<br/>
 <%= link_to 'New Misale', new_misale_path %>

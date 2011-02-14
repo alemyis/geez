@@ -4,6 +4,7 @@ body, p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size:   13px;
   line-height: 18px;
+  	background-color: #f0f0f0;
 }
 
 pre {
@@ -55,11 +56,40 @@ div.field, div.actions {
   list-style: square;
 }
 
+.main{
+	margin: 10px 50px 10px 50px;
+    background-color: white;
+    border: 3px solid #aaa;
+    border-top: none;
+}
+
+.navmenu{
+	text-align:center;
+	width:100%;
+	text-transform:uppercase;
+	padding:10px 0px 20px 300px
+}
+.navmenuitem:a{
+	text-decoration:none;
+}
+.navmenuitem{
+	border: thin solid black;
+	margin: 0px 5px 0px 0px;
+	padding: 0px 3px 0px 3px;
+	float:left;
+}
+
 img#illustration{
+	width: 100px;
+}
+img#illustration:hover{
 	width: 200px;
 }
 img#tinyillustration{
 	width: 30px;
+}
+img#tinyillustration:hover{
+	width: 200px;
 }
 
 .simple_form label {
@@ -102,4 +132,35 @@ img#tinyillustration{
   color: #555;
   display: block;
   font-style: italic;
+}
+
+.itemid {
+	font-size:18pt;
+	float: left;
+}
+
+.activechallenge {
+	background-color:#AAAAAA;
+}
+
+.closedchallenge {
+	background-color:#AAAAAA;
+}
+
+.challengetitle{
+	margin-left: 50px;
+	color:#0033CC;
+}
+
+.challengenote{
+	margin-left: 50px;
+}
+
+.geeztext{
+	font-size:12pt;	
+	padding-left: 10px;
+}
+
+.tailtext{
+	padding-left: 50px;
 }

@@ -2,7 +2,9 @@ class Challenge < ActiveRecord::Base
   has_many :categorizations #, :dependent => :destroy
   has_many :misales, :through => :categorizations
   
-  validates_presence_of :title, :note, :status
+  validates_presence_of :title, :note, :status #, :categorizations
+  
+  validates_associated :categorizations
   
   accepts_nested_attributes_for :categorizations, :reject_if => lambda { |a| a[:misale_id].blank? || a[:position].blank? }, :allow_destroy => true
   

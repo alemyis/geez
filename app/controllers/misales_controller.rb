@@ -2,7 +2,13 @@ class MisalesController < ApplicationController
   # GET /misales
   # GET /misales.xml
   def index
-    @misales = Misale.all
+    @page_size = params[:size].nil? ? 1 : params[:size].to_i
+    @misales = Misale.all.paginate(:per_page => @page_size, :page => params[:page])
+
+    # for the new once create a comment object
+    for misale in @misales do
+      misale.comments.build
+    end
 
     respond_to do |format|
       format.html # index.html.erb

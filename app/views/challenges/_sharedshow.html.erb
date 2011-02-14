@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<%= render :partial => 'header', :locals => {:challenge => challenge }%>
+<div>
+	<p style='display:none;'>
+		Tags: 
+		<% for misale in challenge.misales %>
+			<%= misale.tag %>
+		<% end %>	
+	</p>
+	
+	<% if challenge.status == 1 %>
+		<%= render :partial => "active", :locals => {:challenge => challenge } %>
+	<% else %>
+		<% for misale in challenge.misales %>
+			<p>
+				<%= render :partial => "misales/minishow", :locals => { :misale => misale } %>
+			</p>
+		<% end %>	
+	<% end %>
+</div>

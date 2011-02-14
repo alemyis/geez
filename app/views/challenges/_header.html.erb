@@ -1,20 +1,11 @@
-<p>
-  <b># <%= challenge.id %>:</b>
-  <%= challenge.title %>
-</p>
-
-<p>
-  <%= challenge.note %>
-</p>
-
-<p>
-  <%= challenge.get_status %>
-</p>
-
-<div>
-	<%= link_to 'link', challenge %>
-    <%= link_to 'edit', edit_challenge_path(challenge) %>
-    <%= link_to 'posts', challenge %>
+<div class="<%= challenge.status == 1 ? :activechallenge : :closedchallenge %>"">
+	<div class='itemid'>#<%= challenge.id %></div>
+  	<div class='geeztext challengetitle'><%= challenge.title %></div>
+	<div class='geeztext challengenote'><%= challenge.note %></div>
+	
+	<div>
+		<%= link_to 'link', challenge %>
+	    <%= link_to 'edit', edit_challenge_path(challenge) %>
+	    <%= link_to 'posts', challenge %>
+	</div>
 </div>
-
-<hr/>
