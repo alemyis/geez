@@ -13,8 +13,8 @@ pre {
   font-size: 11px;
 }
 
-a { color: #000; }
-a:visited { color: #666; }
+a { color: #AE0000; }
+a:visited { color: #AE0000; }
 a:hover { color: #fff; background-color:#000; }
 
 div.field, div.actions {
@@ -61,22 +61,22 @@ div.field, div.actions {
     background-color: white;
     border: 3px solid #aaa;
     border-top: none;
+	padding: 10px 10px 10px 10px;
 }
 
 .navmenu{
 	text-align:center;
 	width:100%;
-	text-transform:uppercase;
 	padding:10px 0px 20px 300px
 }
-.navmenuitem:a{
-	text-decoration:none;
-}
+
+
 .navmenuitem{
-	border: thin solid black;
 	margin: 0px 5px 0px 0px;
 	padding: 0px 3px 0px 3px;
 	float:left;
+	background-color: #FFEFC6;
+	color: #AE0000;
 }
 
 img#illustration{
@@ -137,14 +137,19 @@ img#tinyillustration:hover{
 .itemid {
 	font-size:18pt;
 	float: left;
+	padding: 15px 10px 10px 0px;
 }
 
-.activechallenge {
+.misaleheader,
+.activechallenge,
+.closedchallenge{
 	background-color:#FFEFC6;
+	padding: 5px 5px 5px 5px;
 }
 
+.activechallenge,
 .closedchallenge {
-	background-color:#FFEFC6;
+	border: 3px solid #FFCFC6;
 }
 
 .challengetitle{
@@ -154,6 +159,11 @@ img#tinyillustration:hover{
 
 .challengenote{
 	margin-left: 50px;
+	padding: 10px 0 10px 0;
+}
+
+.comments{
+	background-color:#EEEEEE;
 }
 
 .geeztext{
@@ -164,4 +174,9 @@ img#tinyillustration:hover{
 
 .tailtext{
 	padding-left: 50px;
+}
+
+#socialMedia{
+	float: right;
+	padding: 15px 40px 0 0;
 }

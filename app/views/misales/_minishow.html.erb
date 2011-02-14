@@ -1,6 +1,12 @@
-<div>
-  <div class='geeztext headtext'><%= misale.head %></div>
-  <div class='geeztext tailtext'><%= misale.tail %></div>
+<div class='misaleheader'>
+	<div class='itemid'>#<%= misale.id %></div>
+	<div class='geeztext headtext'><%= misale.head %></div>
+	<div class='geeztext tailtext'><%= misale.tail %></div>
+	<div>
+		<%= link_to 'link', misale %>
+		<%= link_to 'edit', edit_misale_path(misale) %>
+		<%= link_to 'comments', misale %>
+	</div>
 </div>
 
 <div>
@@ -28,12 +34,6 @@
 	<% end %>
 	</ol>
 <% end %>
-
-<div>
-    <%= link_to 'link', misale %>
-	<%= link_to 'edit', edit_misale_path(misale) %>
-    <%= link_to 'comments', misale %>
-</div>
 
 
 <br/>

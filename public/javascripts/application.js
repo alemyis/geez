@@ -19,3 +19,18 @@ function onLoad() {
 }
 
 google.setOnLoadCallback(onLoad);
+
+
+
+function tweetThis(containerId){
+	var content = document.getElementById(containerId);
+  	// Create the HTML for out text area
+  	content.innerHTML = '<a href="http://twitter.com/share' +
+						'?url=' + document.location.href +
+						'&via=GeezGames" ' +
+						'class="twitter-share-button">Tweet</a>';
+}
+
+$(document).ready(function() {
+ 	tweetThis('socialMedia');
+});

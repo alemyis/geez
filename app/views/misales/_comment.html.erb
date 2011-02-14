@@ -1,27 +1,29 @@
-<p>
-	<b>comments:</b>
-</p>
-
-<%= simple_form_for(misale) do |f| %>
-	<% f.fields_for :comments do |builder| %>
-		<% if builder.object.new_record? %>
-			<p>
-				<%= builder.input :nickname %>
-				<%= builder.input :phone %>
-				<%= builder.input :email %>
-				<%= builder.input :comment %>
-			</p>
-		<% else %>
-			<p>
-				<%= builder.object.nickname %>[<%= builder.object.created_at %>]
-			</p>
-			<p>
-				<%= builder.object.comment %>
-			</p>
+<div class='comments'>
+	<p>
+		<b>comments:</b>
+	</p>
+	
+	<%= simple_form_for(misale) do |f| %>
+		<% f.fields_for :comments do |builder| %>
+			<% if builder.object.new_record? %>
+				<p>
+					<%= builder.input :nickname %>
+					<%= builder.input :phone %>
+					<%= builder.input :email %>
+					<%= builder.input :comment %>
+				</p>
+			<% else %>
+				<p>
+					<%= builder.object.nickname %>[<%= builder.object.created_at %>]
+				</p>
+				<p>
+					<%= builder.object.comment %>
+				</p>
+			<% end %>
 		<% end %>
+	
+		<div class="actions">
+			<%= f.button :submit, :value => 'submit' %>
+		</div>
 	<% end %>
-
-	<div class="actions">
-		<%= f.button :submit, :value => 'submit' %>
-	</div>
-<% end %>
+</div>
