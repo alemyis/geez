@@ -140,16 +140,16 @@ img#tinyillustration:hover{
 }
 
 .activechallenge {
-	background-color:#AAAAAA;
+	background-color:#FFEFC6;
 }
 
 .closedchallenge {
-	background-color:#AAAAAA;
+	background-color:#FFEFC6;
 }
 
 .challengetitle{
 	margin-left: 50px;
-	color:#0033CC;
+	color:#AE0000;
 }
 
 .challengenote{
@@ -159,6 +159,7 @@ img#tinyillustration:hover{
 .geeztext{
 	font-size:12pt;	
 	padding-left: 10px;
+	color: #AE0000;
 }
 
 .tailtext{

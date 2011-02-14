@@ -16,16 +16,6 @@ function onLoad() {
       		[google.elements.keyboard.LayoutCode.ETHIOPIC],
       		[$(this).attr('id')]);
 	});
-  
-  /*var kbd = new google.elements.keyboard.Keyboard(
-      [google.elements.keyboard.LayoutCode.ETHIOPIC],
-      ['t1', 't2']);
-  
-    var kbd2 = new google.elements.keyboard.Keyboard(
-      [google.elements.keyboard.LayoutCode.ETHIOPIC],
-      ['t3']);
-      */
 }
 
 google.setOnLoadCallback(onLoad);
-​

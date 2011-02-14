@@ -1,5 +1,5 @@
 <div>
-  <div class='geeztext'><%= misale.head %><div>
+  <div class='geeztext headtext'><%= misale.head %></div>
   <div class='geeztext tailtext'><%= misale.tail %></div>
 </div>
 
@@ -21,7 +21,7 @@
 <% end %>
 
 <% for categorization in misale.categorizations %>
-	<b>responses:</b>
+	<b>responses<%# "መልሶች".force_encoding('utf-8')  %>:</b>
 	<ol>
 	<% for answer in categorization.answers %>
 		<li><%= "[#{answer.contact.nickname}] #{answer.response}" %></li>
