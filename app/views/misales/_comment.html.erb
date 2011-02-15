@@ -1,8 +1,6 @@
-<div class='comments'>
-	<p>
-		<b>comments:</b>
-	</p>
-	
+<b>comments:</b>
+
+<div class='comments'>	
 	<%= simple_form_for(misale) do |f| %>
 		<% f.fields_for :comments do |builder| %>
 			<% if builder.object.new_record? %>
