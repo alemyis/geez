@@ -38,9 +38,7 @@ ActiveRecord::Schema.define(:version => 20110212183027) do
   end
 
   create_table "comments", :force => true do |t|
-    t.string   "nickname"
-    t.string   "email"
-    t.string   "phone"
+    t.integer  "contact_id"
     t.integer  "misale_id"
     t.text     "comment"
     t.datetime "created_at"

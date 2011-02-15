@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
 
+<%= render :partial => 'error', :locals => {:misale => misale} %>
+
 <%= render :partial => "minishow", :locals => { :misale => misale } %>
 
 <%= render :partial => "comment", :locals => { :misale => misale } %>

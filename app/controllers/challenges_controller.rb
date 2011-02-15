@@ -2,8 +2,8 @@ class ChallengesController < ApplicationController
   # GET /challenges
   # GET /challenges.xml
   def index
-    @page_size = params[:size].nil? ? 1 : params[:size].to_i
-    @challenges = Challenge.all.paginate(:per_page => @page_size, :page => params[:page])
+    page_size = params[:size].nil? ? 1 : params[:size].to_i
+    @challenges = Challenge.all.paginate(:per_page => page_size, :page => params[:page])
     
     # for the active once - init answers
     for challenge in @challenges do
@@ -26,7 +26,7 @@ class ChallengesController < ApplicationController
     @challenge = Challenge.find(params[:id])
     if @challenge.status == 1 then
       for categorization in @challenge.categorizations do
-        categorization.answers.build(:contact_id => 1)
+        answer = categorization.answers.build(:contact_id => 1)
       end
     end
     respond_to do |format|
@@ -73,6 +73,20 @@ class ChallengesController < ApplicationController
   # PUT /challenges/1.xml
   def update
     @challenge = Challenge.find(params[:id])
+
+    # Create if contact is not found 
+    contact = Contact.find_or_create_by_nickname_and_email_and_phone(params[:contact]) 
+    
+    # Major hack. Tweak contact_id parameter for answer object. Use ID from the above contact
+    params[:challenge][:categorizations_attributes].each_value do |category_value|
+      unless category_value[:answers_attributes].nil? then
+        category_value[:answers_attributes].each_value do |answer_value| 
+          if answer_value.has_key? :contact_id then
+            answer_value[:contact_id] = contact.id.to_s
+          end
+        end
+      end
+    end #category_value
 
     respond_to do |format|
       if @challenge.update_attributes(params[:challenge])

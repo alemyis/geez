@@ -7,14 +7,13 @@
 		<% f.fields_for :comments do |builder| %>
 			<% if builder.object.new_record? %>
 				<p>
-					<%= builder.input :nickname %>
-					<%= builder.input :phone %>
-					<%= builder.input :email %>
+					<%= render 'contacts/contact', :f => builder %>
+					<%= builder.hidden_field :contact_id %>
 					<%= builder.input :comment %>
 				</p>
 			<% else %>
 				<p>
-					<%= builder.object.nickname %>[<%= builder.object.created_at %>]
+					<%= builder.object.contact.nickname %>[<%= builder.object.created_at %>]
 				</p>
 				<p>
 					<%= builder.object.comment %>

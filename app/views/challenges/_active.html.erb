@@ -13,5 +13,8 @@
 	<% f_challenge.fields_for :categorizations do |f_categorization| %>
 		<%= render 'categorization_fields', :f => f_categorization %>
 	<% end %>
-	<%= f_challenge.button :submit, :value => 'submit' %>
+	<%= render :partial => 'contacts/contact' %>
+	<div class="actions">
+		<%= f_challenge.button :submit, :value => 'submit' %>
+	</div>
 <% end %>

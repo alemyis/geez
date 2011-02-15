@@ -65,13 +65,26 @@ class MisalesController < ApplicationController
   # PUT /misales/1.xml
   def update
     @misale = Misale.find(params[:id])
+    
+    # Create if contact is not found 
+    contact = Contact.find_or_create_by_nickname_and_email_and_phone(params[:contact]) 
+    
+    # Hack - Tweak contact id with the one fetched or created above.
+    unless params[:misale][:comments_attributes].nil? then
+      params[:misale][:comments_attributes].each_value do |comment_value|
+        if comment_value.has_key? :contact_id then
+          comment_value[:contact_id] = contact.id.to_s
+        end
+      end      
+    end
 
     respond_to do |format|
       if @misale.update_attributes(params[:misale])
         format.html { redirect_to(@misale, :notice => 'Misale was successfully updated.') }
         format.xml  { head :ok }
       else
-        format.html { render :action => "edit" }
+        # TODO - once we have admin/non-admin users defined, redirect based on rights.
+        format.html { render :action => "show" }
         format.xml  { render :xml => @misale.errors, :status => :unprocessable_entity }
       end
     end
