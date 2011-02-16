@@ -176,6 +176,11 @@ img#tinyillustration:hover{
 	padding-left: 50px;
 }
 
+.pagination{
+	width:100%;
+	text-align:center;
+}
+
 #socialMedia{
 	float: right;
 	padding: 15px 40px 0 0;
