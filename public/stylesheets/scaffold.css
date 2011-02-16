@@ -67,7 +67,7 @@ div.field, div.actions {
 .navmenu{
 	text-align:center;
 	width:100%;
-	padding:10px 0px 20px 300px
+	/*padding:10px 0px 20px 300px*/
 }
 
 
@@ -75,8 +75,8 @@ div.field, div.actions {
 	margin: 0px 5px 0px 0px;
 	padding: 0px 3px 0px 3px;
 	float:left;
-	background-color: #FFEFC6;
 	color: #AE0000;
+	font-weight: bold;
 }
 
 img#illustration{
