@@ -4,6 +4,7 @@ class ChallengesController < ApplicationController
   def index
     page_size = params[:size].nil? ? 1 : params[:size].to_i
     @challenges = Challenge.all.paginate(:per_page => page_size, :page => params[:page])
+    @fetan = !session[:fetan].nil?
     
     # for the active once - init answers
     for challenge in @challenges do
@@ -23,6 +24,7 @@ class ChallengesController < ApplicationController
   # GET /challenges/1
   # GET /challenges/1.xml
   def show
+    @fetan = !session[:fetan].nil?
     @challenge = Challenge.find(params[:id])
     if @challenge.status == 1 then
       for categorization in @challenge.categorizations do

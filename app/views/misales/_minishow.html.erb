@@ -1,40 +1,46 @@
-<div class='misaleheader'>
-	<div class='itemid'>#<%= misale.id %></div>
-	<div class='geeztext headtext'><%= misale.head %></div>
-	<div class='geeztext tailtext'><%= misale.tail %></div>
-	<div>
-		<%= link_to 'link', misale %>
-		<%= link_to 'edit', edit_misale_path(misale) %>
-		<%= link_to 'comments', misale %>
-	</div>
-</div>
-
 <div>
-  <b>Tag:</b>
-  <%= misale.tag %>
-  &nbsp;&nbsp;&nbsp;
-  <b>Ye:</b>
-  <%= misale.ye %>
-  &nbsp;&nbsp;&nbsp;
-  <b>Ne:</b>
-  <%= misale.ne %>
-</div>
-
-<% unless misale.illustration.empty? then %>
-	<div>
-	 	<img id='illustration' src='<%= misale.illustration %>' alt='illustration'/>
+	<div class='misaleheader' misale='<%= misale.head %>'>
+		<div class='itemid'>#<%= misale.id %></div>
+		<div class='itemContent'>
+			<div class='tweetThisContent'>
+				<%= render :partial => 'misales/tweetThisContent', :locals => { :misale => misale } %>
+			</div>
+			<div class='geeztext headtext'><%= misale.head %></div>
+			<div class='fetan tailtext <%= @fetan ? "" : "hidden" %>' misale='<%= misale.head %>' onclick='javascript:revealMisale(this)'>_______???______</div>
+			<div class='geeztext tailtext <%= @fetan ? "hidden" : "" %>'><%= misale.tail %></div>
+			<div class='contentActionLinks'>
+				<%= link_to 'link', misale %>
+				<%= link_to 'edit', edit_misale_path(misale) %>
+				<%= link_to 'comments', misale %>
+			</div>
+		</div>
 	</div>
-<% end %>
-
-<% for categorization in misale.categorizations %>
-	<b>responses<%# "መልሶች".force_encoding('utf-8')  %>:</b>
-	<ol>
-	<% for answer in categorization.answers %>
-		<li><%= "[#{answer.contact.nickname}] #{answer.response}" %></li>
+	
+	<div class='hidden'>
+	  <b>Tag:</b>
+	  <%= misale.tag %>
+	  &nbsp;&nbsp;&nbsp;
+	  <b>Ye:</b>
+	  <%= misale.ye %>
+	  &nbsp;&nbsp;&nbsp;
+	  <b>Ne:</b>
+	  <%= misale.ne %>
+	</div>
+	
+	<% unless misale.illustration.empty? then %>
+		<div>
+		 	<img id='illustration' misale='<%= misale.head %>' class='<%= @fetan ? "hidden" : "" %>' src='<%= misale.illustration %>' alt='illustration'/>
+		</div>
 	<% end %>
-	</ol>
-<% end %>
-
-
-<br/>
-<hr/>
+	<div misale='<%= misale.head %>' class='<%= @fetan ? "hidden" : "" %>'>
+		<% for categorization in misale.categorizations %>
+			<b>responses<%# "መልሶች".force_encoding('utf-8')  %>:</b>
+			<ol>
+			<% for answer in categorization.answers %>
+				<li><%= "[#{answer.contact.nickname}] #{answer.response}" %></li>
+			<% end %>
+			</ol>
+		<% end %>
+	</div>
+	
+</div>

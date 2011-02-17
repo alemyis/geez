@@ -137,14 +137,22 @@ img#tinyillustration:hover{
 .itemid {
 	font-size:18pt;
 	float: left;
-	padding: 15px 10px 10px 0px;
+	padding: 5px;
 }
-
+.itemContent{
+	margin-left: 50px;
+}
 .misaleheader,
 .activechallenge,
 .closedchallenge{
-	background-color:#FFEFC6;
 	padding: 5px 5px 5px 5px;
+	border: 2px solid #FFEFC6;
+}
+
+.activechallenge,
+.closedchallenge,
+.itemid {
+	background-color:#FFEFC6;
 }
 
 .activechallenge,
@@ -172,8 +180,8 @@ img#tinyillustration:hover{
 	color: #AE0000;
 }
 
+.headtext,
 .tailtext{
-	padding-left: 50px;
 }
 
 .pagination{
@@ -184,4 +192,27 @@ img#tinyillustration:hover{
 #socialMedia{
 	float: right;
 	padding: 15px 40px 0 0;
+}
+
+.tweetThisContent{
+	float:right;
+}
+.contentActionLinks{
+	width: 100%;
+	text-align:right;
+}
+
+.hidden{
+	display:none;
+}
+.fetan{
+	text-decoration: underline;
+	cursor:pointer;
+}
+#fetanGameMode{
+	float:right;
+	margin-top: 100px;
+}
+#fetanGameMode input{
+	border: 1px solid black;
 }

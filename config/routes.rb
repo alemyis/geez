@@ -3,6 +3,8 @@ Misaleanegager::Application.routes.draw do
 
   resources :challenges
 
+  match '/fetan/toggle' => 'application#fetan'
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

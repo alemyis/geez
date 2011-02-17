@@ -3,6 +3,7 @@ class MisalesController < ApplicationController
   # GET /misales.xml
   def index
     @page_size = params[:size].nil? ? 1 : params[:size].to_i
+    @fetan = !session[:fetan].nil?
     @misales = Misale.all.paginate(:per_page => @page_size, :page => params[:page])
 
     # for the new once create a comment object
@@ -20,7 +21,7 @@ class MisalesController < ApplicationController
   # GET /misales/1.xml
   def show
     @misale = Misale.find(params[:id])
-    
+    @fetan = !session[:fetan].nil?
     @comment = @misale.comments.build
     
     respond_to do |format|
