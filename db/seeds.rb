@@ -86,3 +86,8 @@ comment2_2 = Comment.create(:contact_id => contact2.id, :comment =>'orem ipsum d
 
 comment3_1 = Comment.create(:contact_id => contact3.id, :comment =>'አበበ በሶ በላ ፣ ጫላ ጩቤ ጨበተ ፣  አበበ በሶ በላ ፣ ጫላ ጩቤ ጨበተ ፣  አበበ በሶ በላ ፣ ጫላ ጩቤ ጨበተ ፣  አበበ በሶ በላ ፣ ጫላ ጩቤ ጨበተ ፣  ', :misale_id => misale3.id)
 
+Lookup.create(:key => :responses, :value => 'መልሶች')
+Lookup.create(:key => :comments, :value => 'አስተያየቶች')
+Lookup.create(:key => :fetan, :value => 'ፈጣን ሎተሪ ጨዋታ')
+Lookup.create(:key => :misales, :value => 'ምሳሌዎች')
+Lookup.create(:key => :challenges, :value => 'ቶንቦላ')

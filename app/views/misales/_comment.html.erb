@@ -1,5 +1,5 @@
 <div misale='<%= misale.head %>' class='<%= @fetan ? "hidden" : "" %>'>
-<b>comments:</b>
+<u><%= ApplicationHelper.get_value(:comments, :comments) %>:</u>
 
 <div class='comments'>	
 	<%= simple_form_for(misale) do |f| %>

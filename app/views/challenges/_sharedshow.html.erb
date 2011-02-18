@@ -12,9 +12,9 @@
 	<% if challenge.status == 1 %>
 		<%= render :partial => "active", :locals => {:challenge => challenge } %>
 	<% else %>
-		<% for misale in challenge.misales %>
+		<% for categorization in challenge.categorizations.sort_by(&:position) %>
 			<p>
-				<%= render :partial => "misales/minishow", :locals => { :misale => misale } %>
+				<%= render :partial => "misales/minishow", :locals => { :misale => categorization.misale } %>
 			</p>
 		<% end %>	
 	<% end %>

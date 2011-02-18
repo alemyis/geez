@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Key:</b>
+  <%= @lookup.key %>
+</p>
+
+<p>
+  <b>Value:</b>
+  <%= @lookup.value %>
+</p>
+
+
+<%= link_to 'Edit', edit_lookup_path(@lookup) %> |
+<%= link_to 'Back', lookups_path %>

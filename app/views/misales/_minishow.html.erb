@@ -1,3 +1,5 @@
+<%# encoding: utf-8%>
+
 <div>
 	<div class='misaleheader' misale='<%= misale.head %>'>
 		<div class='itemid'>#<%= misale.id %></div>
@@ -34,7 +36,7 @@
 	<% end %>
 	<div misale='<%= misale.head %>' class='<%= @fetan ? "hidden" : "" %>'>
 		<% for categorization in misale.categorizations %>
-			<b>responses<%# "መልሶች".force_encoding('utf-8')  %>:</b>
+			<u><%= ApplicationHelper.get_value(:responses, :responses)  %>:</u>
 			<ol>
 			<% for answer in categorization.answers %>
 				<li><%= "[#{answer.contact.nickname}] #{answer.response}" %></li>
