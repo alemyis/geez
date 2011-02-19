@@ -1,5 +1,3 @@
-<%# encoding: utf-8%>
-
 <div>
 	<div class='misaleheader' misale='<%= misale.head %>'>
 		<div class='itemid'>#<%= misale.id %></div>
@@ -11,9 +9,12 @@
 			<div class='fetan tailtext <%= @fetan ? "" : "hidden" %>' misale='<%= misale.head %>' onclick='javascript:revealMisale(this)'>_______???______</div>
 			<div class='geeztext tailtext <%= @fetan ? "hidden" : "" %>'><%= misale.tail %></div>
 			<div class='contentActionLinks'>
-				<%= link_to 'link', misale %>
-				<%= link_to 'edit', edit_misale_path(misale) %>
-				<%= link_to 'comments', misale %>
+				<%= link_to ApplicationHelper.get_value(:link, :link), misale %>
+				<%= link_to ApplicationHelper.get_value(:edit, :edit), edit_misale_path(misale) %>
+				<span class="comment-count-bubble">
+					<%= link_to misale.comments.count , misale %>
+				  <span class="comment-count-bubble-arrow"></span>
+				</span>
 			</div>
 		</div>
 	</div>

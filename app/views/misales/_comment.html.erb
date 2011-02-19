@@ -1,6 +1,6 @@
 <div misale='<%= misale.head %>' class='<%= @fetan ? "hidden" : "" %>'>
 <u><%= ApplicationHelper.get_value(:comments, :comments) %>:</u>
-
+<br/><br/>
 <div class='comments'>	
 	<%= simple_form_for(misale) do |f| %>
 		<% f.fields_for :comments do |builder| %>
@@ -11,12 +11,11 @@
 					<%= builder.input :comment %>
 				</p>
 			<% else %>
-				<p>
-					<%= builder.object.contact.nickname %>[<%= builder.object.created_at %>]
-				</p>
-				<p>
+				<%= builder.object.contact.nickname %>    [<%= builder.object.created_at.to_date %>]
+				<div class="comment-bubble">
 					<%= builder.object.comment %>
-				</p>
+				  <div class="comment-bubble-arrow"></div>
+				</div>
 			<% end %>
 		<% end %>
 	

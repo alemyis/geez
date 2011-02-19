@@ -4,6 +4,8 @@ body, p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size:   13px;
   line-height: 18px;
+}
+body{
   	background-color: #f0f0f0;
 }
 
@@ -138,6 +140,7 @@ img#tinyillustration:hover{
 	font-size:18pt;
 	float: left;
 	padding: 5px;
+	border-radius: 10px;
 }
 .itemContent{
 	margin-left: 50px;
@@ -147,6 +150,8 @@ img#tinyillustration:hover{
 .closedchallenge{
 	padding: 5px 5px 5px 5px;
 	border: 2px solid #FFEFC6;
+	-moz-border-radius: 0.25em 0.25em 0.25em 0.25em;
+	border-radius: 10px;
 }
 
 .activechallenge,
@@ -171,7 +176,7 @@ img#tinyillustration:hover{
 }
 
 .comments{
-	background-color:#EEEEEE;
+	/*background-color:#EEEEEE;*/
 }
 
 .geeztext{
@@ -191,7 +196,7 @@ img#tinyillustration:hover{
 
 #socialMedia{
 	float: right;
-	padding: 15px 40px 0 0;
+	clear:both;
 }
 
 .tweetThisContent{
@@ -200,6 +205,8 @@ img#tinyillustration:hover{
 .contentActionLinks{
 	width: 100%;
 	text-align:right;
+	font-size:large;
+	margin-right:30px;
 }
 
 .hidden{
@@ -211,8 +218,68 @@ img#tinyillustration:hover{
 }
 #fetanGameMode{
 	float:right;
-	margin-top: 100px;
+	clear:both;
 }
 #fetanGameMode input{
 	border: 1px solid black;
+}
+
+.comment-count-bubble {
+  /*background-color:#FFEFDD;*/
+  border:1px solid #AE0000;
+  margin:0;
+  padding:0px 2px 0px 5px;
+  position:relative;
+  font-size:10pt;
+  -moz-border-radius:2px;
+  -webkit-border-radius:2pxpx;
+  /*-moz-box-shadow:0 0 5px #888888;
+  -webkit-box-shadow:0 0 5px #888888;*/
+}
+
+.contentActionLinks a,
+.comment-count-bubble a{
+	text-decoration: none;
+}
+
+.comment-count-bubble-arrow {
+  border-color: #AE0000 transparent transparent #AE0000;
+  border-style: solid;
+  border-width: 4px;
+  height:0;
+  width:0;
+  position:absolute;
+  left: 0.5px;
+  bottom:-8px;
+  _border-left-color: pink;
+  _border-bottom-color: pink;
+  _border-right-color: pink;
+  _filter: chroma(color=pink);
+}
+
+.comment-bubble {
+  background-color:#EDEDED;
+  /*border:1px solid #AE0000;*/
+  margin:15px 0 10px 10px;
+  padding:10px;
+  position:relative;
+  -moz-border-radius:10px;
+  -webkit-border-radius:10px;
+  /*-moz-box-shadow:0 0 5px #888888;
+  -webkit-box-shadow:0 0 5px #888888;*/
+}
+
+.comment-bubble-arrow {
+  border-color: transparent transparent #EDEDED #EDEDED;
+  border-style: solid;
+  border-width: 10px;
+  height:0;
+  width:0;
+  position:absolute;
+  top:-15px;
+  left:30px;
+  _border-left-color: pink;
+  _border-bottom-color: pink;
+  _border-right-color: pink;
+  _filter: chroma(color=pink);
 }
