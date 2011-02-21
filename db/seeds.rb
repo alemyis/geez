@@ -88,7 +88,7 @@ comment3_1 = Comment.create(:contact_id => contact3.id, :comment =>'አበበ �
 
 Lookup.create(:key => :responses, :value => 'መልሶች')
 Lookup.create(:key => :comments, :value => 'አስተያየቶች')
-Lookup.create(:key => :fetan, :value => 'ፈጣን ሎተሪ ጨዋታ')
+Lookup.create(:key => :fetan, :value => 'ፈጣን')
 Lookup.create(:key => :misales, :value => 'ምሳሌዎች')
 Lookup.create(:key => :challenges, :value => 'ቶንቦላ')
 Lookup.create(:key => :edit, :value => '✍')

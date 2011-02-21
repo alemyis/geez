@@ -29,21 +29,4 @@
 	  <b>Ne:</b>
 	  <%= misale.ne %>
 	</div>
-	
-	<% unless misale.illustration.empty? then %>
-		<div>
-		 	<img id='illustration' misale='<%= misale.head %>' class='<%= @fetan ? "hidden" : "" %>' src='<%= misale.illustration %>' alt='illustration'/>
-		</div>
-	<% end %>
-	<div misale='<%= misale.head %>' class='<%= @fetan ? "hidden" : "" %>'>
-		<% for categorization in misale.categorizations %>
-			<u><%= ApplicationHelper.get_value(:responses, :responses)  %>:</u>
-			<ol>
-			<% for answer in categorization.answers %>
-				<li><%= "[#{answer.contact.nickname}] #{answer.response}" %></li>
-			<% end %>
-			</ol>
-		<% end %>
-	</div>
-	
 </div>

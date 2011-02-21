@@ -15,6 +15,10 @@
 		<% for categorization in challenge.categorizations.sort_by(&:position) %>
 			<p>
 				<%= render :partial => "misales/minishow", :locals => { :misale => categorization.misale } %>
+				<div class='misaleBody'>
+					<%= render :partial => 'misales/answers', :locals => { :misale => categorization.misale } %>
+					<br/>
+				</div>
 			</p>
 		<% end %>	
 	<% end %>

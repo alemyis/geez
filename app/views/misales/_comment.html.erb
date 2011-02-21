@@ -1,20 +1,22 @@
 <div misale='<%= misale.head %>' class='<%= @fetan ? "hidden" : "" %>'>
-<u><%= ApplicationHelper.get_value(:comments, :comments) %>:</u>
-<br/><br/>
+<div class='section_header'><%= ApplicationHelper.get_value(:comments, :comments) %>:</div>
 <div class='comments'>	
 	<%= simple_form_for(misale) do |f| %>
 		<% f.fields_for :comments do |builder| %>
 			<% if builder.object.new_record? %>
+			    <br/>
 				<p>
-					<%= render 'contacts/contact', :f => builder %>
 					<%= builder.hidden_field :contact_id %>
-					<%= builder.input :comment %>
+					<%= builder.input :comment, :label => 'your comment', :input_html => { :rows => 4, :class => 'inputfield' } %>
+					<%= render 'contacts/contact', :f => builder %>
 				</p>
 			<% else %>
-				<%= builder.object.contact.nickname %>    [<%= builder.object.created_at.to_date %>]
-				<div class="comment-bubble">
-					<%= builder.object.comment %>
-				  <div class="comment-bubble-arrow"></div>
+			    <div class='comment'>
+					<%= builder.object.contact.nickname %>    [<%= builder.object.created_at.to_date %>]
+					<div class="comment-bubble">
+						<%= builder.object.comment %>
+					  <div class="comment-bubble-arrow"></div>
+					</div>
 				</div>
 			<% end %>
 		<% end %>

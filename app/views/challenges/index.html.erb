@@ -1,11 +1,8 @@
 <%= will_paginate %>
-<%= link_to 'New Challenge', new_challenge_path %>
 
 <% @challenges.each do |challenge| %>
 	<%= render :partial => 'sharedshow', :locals => {:challenge => challenge }%>
 <% end %>
 
-<br />
-<%= will_paginate %>
 <br/>
 

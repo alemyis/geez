@@ -4,5 +4,9 @@
 
 <%= render :partial => "minishow", :locals => { :misale => misale } %>
 
-<%= render :partial => "comment", :locals => { :misale => misale  } %>
+<div class='misaleBody'>
+	<%= render :partial => 'misales/answers', :locals => { :misale => misale } %>
+	<br/>
+	<%= render :partial => "comment", :locals => { :misale => misale  } %>
+</div>
 
