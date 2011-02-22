@@ -5,11 +5,12 @@
 		<% f.fields_for :comments do |builder| %>
 			<% if builder.object.new_record? %>
 			    <br/>
-				<p>
+				<div style='padding-left:10px;'>
+					Your comment *
 					<%= builder.hidden_field :contact_id %>
-					<%= builder.input :comment, :label => 'your comment', :input_html => { :rows => 4, :class => 'inputfield' } %>
+					<%= builder.input :comment, :label => false, :input_html => { :rows => 4, :class => 'inputfield' } %>
 					<%= render 'contacts/contact', :f => builder %>
-				</p>
+				</div>
 			<% else %>
 			    <div class='comment'>
 					<%= builder.object.contact.nickname %>    [<%= builder.object.created_at.to_date %>]

@@ -10,15 +10,8 @@
   <%= csrf_meta_tag %>
   </head>
   <body>
-	<div id="sidebar-left">
-    	<div class='navmenu'>
-			<div class='navmenuitem'><%= link_to ApplicationHelper.get_value(:misales, 'Misales') , misales_path %></div>
-			<div class='navmenuitem'><%= link_to ApplicationHelper.get_value(:challenges, 'Challenges'), challenges_path %></div>
-			<div class='navmenuitem'><%= render :partial => 'misales/fetan' %></div>
-		</div>
-  	</div>
     <div id="page">
-      <div id="sidebar">
+      <div id="sidebar" style='display:none;'>
         <ul id="sidebar-items">
           <li><div id='socialMedia'></div><br/><br/></li>
           <li>
@@ -31,8 +24,12 @@
       </div>
 
       <div id="content">
+	    	<div class='navmenu'>
+				<div class='navmenuitem'><%= link_to ApplicationHelper.get_value(:misales, 'Misales') , misales_path %></div>
+				<div class='navmenuitem'><%= link_to ApplicationHelper.get_value(:challenges, 'Challenges'), challenges_path %></div>
+				<div class='navmenuitem'><%= render :partial => 'misales/fetan' %></div>
+			</div>
         <div id="header">
-          <h1>Ge'ez games</h1>
         </div>
 
         <div id="about">

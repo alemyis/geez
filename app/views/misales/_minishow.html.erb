@@ -5,9 +5,10 @@
 			<div class='tweetThisContent'>
 				<%= render :partial => 'misales/tweetThisContent', :locals => { :misale => misale } %>
 			</div>
-			<div class='geeztext headtext'><%= misale.head %></div>
-			<div class='fetan tailtext <%= @fetan ? "" : "hidden" %>' misale='<%= misale.head %>' onclick='javascript:revealMisale(this)'>_______???______</div>
-			<div class='geeztext tailtext <%= @fetan ? "hidden" : "" %>'><%= misale.tail %></div>
+			<span class='geeztext headtext'><%= misale.head %></span>
+			<span class='geeztext fetan tailtext <%= @fetan ? "" : "hidden" %>' misale='<%= misale.head %>' onclick='javascript:revealMisale(this)'>&nbsp;&nbsp;&nbsp;&nbsp;???&nbsp;&nbsp;&nbsp;&nbsp;</span>
+			<span class='geeztext tailtext <%= @fetan ? "hidden" : "" %>'><%= misale.tail %></span>
+			<br/><br/>
 			<div class='contentActionLinks'>
 				<%= link_to ApplicationHelper.get_value(:link, :link), misale %>
 				<%= link_to ApplicationHelper.get_value(:edit, :edit), edit_misale_path(misale) %>

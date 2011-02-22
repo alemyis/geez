@@ -34,7 +34,7 @@ div.field, div.actions {
 background-color: #f0f0f0;
 width: 950px;
 margin: 0;
-margin-left: 200px;
+margin-left: auto;
 margin-right: auto;
 }
 
@@ -229,10 +229,9 @@ border-bottom: 1px solid #ccc;
 	background-color: white;
 	margin: 5px 5px 5px 0px;
 	padding: 3px 3px 3px 3px;
-	float:right;
+	float:left;
 	color: #AE0000;
 	font-size:14pt;
-	clear: both;
 	width: 100px;
 	border: 1px solid black;
 	text-align: center;
@@ -270,7 +269,6 @@ img#tinyillustration:hover{
 }
 
 .simple_form label {
-  float: left;
   width: 100px;
   text-align: right;
   margin: 2px 10px;
@@ -315,7 +313,9 @@ img#tinyillustration:hover{
 	font-size:18pt;
 	float: left;
 	padding: 5px;
-	border-radius: 10px;
+	border-radius: 5px;
+	-moz-border-radius:5px;
+    -webkit-border-radius:5px;
 }
 .itemContent{
 	margin-left: 50px;
@@ -367,6 +367,7 @@ img#tinyillustration:hover{
 .headtext,
 .tailtext{
 	text-align: center;
+	font-size: 14pt;
 }
 
 .misaleBody{
@@ -393,7 +394,6 @@ img#tinyillustration:hover{
 	width: 100%;
 	text-align:right;
 	font-size:large;
-	margin-right:30px;
 }
 
 .hidden{
@@ -418,8 +418,8 @@ img#tinyillustration:hover{
   padding:0px 2px 0px 5px;
   position:relative;
   font-size:10pt;
-  -moz-border-radius:2px;
-  -webkit-border-radius:2pxpx;
+  -moz-border-radius:3px;
+  -webkit-border-radius:3px;
   /*-moz-box-shadow:0 0 5px #888888;
   -webkit-box-shadow:0 0 5px #888888;*/
 }
