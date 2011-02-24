@@ -6,4 +6,12 @@ module ApplicationHelper
     
     return value.nil? ? returnValueIfNull : value.value
   end
+  
+  def self.FB_APP_ID
+    '6d47a544aaee664209ae9d0666aa8e39'
+  end 
+  
+  def self.FB_CANVAS
+    'http://ec2-50-16-134-117.compute-1.amazonaws.com:90'
+  end
 end

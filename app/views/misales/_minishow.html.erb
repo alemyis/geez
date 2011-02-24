@@ -3,6 +3,7 @@
 		<div class='itemid'>#<%= misale.id %></div>
 		<div class='itemContent'>
 			<div class='tweetThisContent'>
+				<%= render :partial => 'misales/fbPost', :locals => { :misale => misale } %>
 				<%= render :partial => 'misales/tweetThisContent', :locals => { :misale => misale } %>
 			</div>
 			<span class='geeztext headtext'><%= misale.head %></span>

@@ -24,11 +24,14 @@
       </div>
 
       <div id="content">
-	    	<div class='navmenu'>
-				<div class='navmenuitem'><%= link_to ApplicationHelper.get_value(:misales, 'Misales') , misales_path %></div>
-				<div class='navmenuitem'><%= link_to ApplicationHelper.get_value(:challenges, 'Challenges'), challenges_path %></div>
-				<div class='navmenuitem'><%= render :partial => 'misales/fetan' %></div>
-			</div>
+    	<div class='navmenu'>
+			<div class='navmenuitem'><%= link_to ApplicationHelper.get_value(:misales, 'Misales') , misales_path %></div>
+			<div class='navmenuitem'><%= link_to ApplicationHelper.get_value(:challenges, 'Challenges'), challenges_path %></div>
+			<div class='navmenuitem'><%= render :partial => 'misales/fetan' %></div>
+		</div>
+		<div class='search'>
+			<%= render :partial => 'misales/search' %>
+		</div>
         <div id="header">
         </div>
 

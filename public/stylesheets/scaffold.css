@@ -252,6 +252,10 @@ border-bottom: 1px solid #ccc;
 	margin-bottom:  5px;
 }
 
+.search{
+	float:right;
+}
+
 img#illustration{
 	width: 70px;
 }

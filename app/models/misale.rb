@@ -12,4 +12,12 @@ class Misale < ActiveRecord::Base
   def name
     "#{self.head} #{self.tail}"
   end
+  
+  def self.search(search)  
+    if search  
+      find(:all, :conditions => ['head LIKE ? OR tail LIKE ?', "%#{search}%", "%#{search}%"])  
+    else  
+      find(:all)  
+    end  
+  end  
 end

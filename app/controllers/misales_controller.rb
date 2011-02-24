@@ -4,8 +4,9 @@ class MisalesController < ApplicationController
   def index
     @page_size = params[:size].nil? ? 1 : params[:size].to_i
     @fetan = !session[:fetan].nil?
-    @misales = Misale.all.paginate(:per_page => @page_size, :page => params[:page])
-
+    @misales = Misale.search(params[:search]).paginate(:per_page => @page_size, :page => params[:page])
+    
+    
     # for the new once create a comment object
     for misale in @misales do
       misale.comments.build
@@ -102,4 +103,5 @@ class MisalesController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
 end
