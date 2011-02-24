@@ -104,4 +104,15 @@ class MisalesController < ApplicationController
     end
   end
   
+  def fbpost
+    @misale = Misale.find(params[:id])
+    #@misale.ye = 
+    puts @misale.ye
+    @misale.ye = @misale.ye.nil? ? 1 : 1 + @misale.ye
+    @misale.save
+    
+    puts @misale.ye
+    render  'fbpost'
+  end
+  
 end
