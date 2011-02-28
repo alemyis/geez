@@ -77,13 +77,13 @@ $(document).ready(function() {
 
 function setLoggedInUser(session){
    $('input[fbKey|="fbuid"]').val(session.uid);
-   $('#currentContactDetail').hide();
-
    $('img[fbKey|="avatar"]').attr('src', 'https://graph.facebook.com/' + session.uid  +  '/picture');
    var query = FB.Data.query('select name, email from user where uid={0}', session.uid);
    query.wait(function(rows) {
                 $('input[fbKey|="nickname"]').val(rows[0].name);
                 $('input[fbKey|="email"]').val(rows[0].email);
+				// Got all what is needed. Don't prompt for detail any more
+				$('#currentContactDetail').hide();
         });
 }
 

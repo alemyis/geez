@@ -32,7 +32,7 @@ div.field, div.actions {
 }
 #page {
 background-color: #f0f0f0;
-width: 760px;
+width: 730px;
 margin: 0;
 margin-left: auto;
 margin-right: auto;
@@ -43,8 +43,8 @@ float: left;
 background-color: white;
 border: 3px solid #aaa;
 border-top: none;
-padding: 25px;
-width: 754px;
+padding: 5px;
+width: 720px;
 }
 /*
 #sidebar-left{

@@ -15,7 +15,7 @@
 				</div>
 			<% else %>
 			    <div class='comment'>
-			    	<img fbKey='<%= "https://graph.facebook.com/#{builder.object.contact.phone}/picture" %>'/>
+			    	<img src='<%= "https://graph.facebook.com/#{builder.object.contact.fbuid}/picture" %>'/>
 					<%= builder.object.contact.nickname %>    [<%= builder.object.created_at.to_date %>]
 					<div class="comment-bubble">
 						<%= builder.object.comment %>
