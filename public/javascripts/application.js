@@ -44,50 +44,6 @@ function keyboardOutFocus(inputControl){
 	$('#kbd').attr('style', '');
 	$('#kbd').attr('style', 'position: absolute;');
 }
-function ageezKeyboard() {
-	var inputControls = new Array();
-	$('input[type=text]').each(function(index){
-		inputControls[index] = $(this).attr('id');
-		
-		// put the virtual keyboard right bellow the input box
-		$(this).focusin(function(){
-			kbd.setVisible(true);
-			$('#kbd').attr('style', '');
-			$('#kbd').attr('style', 'visibility: visible; position: absolute;');
-			$('#kbd').css('top', $(this).position().top + $(this).height() + 15);
-			$('#kbd').css('left', $(this).position().left);
-		});
-		$(this).focusout(function(){
-			kbd.setVisible(false);
-			$('#kbd').attr('style', '');
-		});
-	});
-	
-	
-	$('textarea').each(function(index){
-		inputControls[inputControls.length + index] = $(this).attr('id');
-
-		// put the virtual keyboard right bellow the input box
-		$(this).focusin(function(){
-			kbd.setVisible(true);
-			$('#kbd').attr('style', '');
-			$('#kbd').attr('style', 'visibility: visible; position: absolute;');
-			$('#kbd').css('top', $(this).position().top + $(this).height() + 15);
-			$('#kbd').css('left', $(this).position().left);
-		});
-		$(this).focusout(function(){
-			kbd.setVisible(false);
-			$('#kbd').attr('style', '');
-		});
-	});
-	
-	
-	kbd = new google.elements.keyboard.Keyboard(
-      		[google.elements.keyboard.LayoutCode.ETHIOPIC],
-			inputControls);
-	
-}
-
 
 function tweetThisPage(containerId){
 	var tweetTagContainer = document.getElementById(containerId);
