@@ -500,6 +500,7 @@ img#tinyillustration:hover{
 
 .actionButton{
 	/*border:1px solid #AE0000;*/
+	border-color: #FFEFC6 #FFEFC6 #FFEFC6 #FFEFC6;
 	border-radius: 5px;
 	cursor:pointer;
 	-moz-border-radius:5px;

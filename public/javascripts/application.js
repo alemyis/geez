@@ -65,9 +65,10 @@ $(document).ready(function() {
 
 	FB.getLoginStatus(function(response) {
 	  if (response.session) {
-	   setLoggedInUser(response.session);
+	   	setLoggedInUser(response.session);
 	  } else {
-	    loginnow();//alert('else');
+	  	//Don't force login. Let user trigger this action. 
+	    //loginnow();
 	    // no user session available, someone you dont know
 	  }
 	});
