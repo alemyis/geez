@@ -1,2 +1,7 @@
 
-<a href='#' onclick='javascript:window.open(<%= "\"http://www.facebook.com/dialog/feed?app_id=#{ApplicationHelper.FB_APP_ID}&redirect_uri=#{ApplicationHelper.FB_CANVAS}/misales/#{misale.id}/fbpost&display=popup&&message=#{misale.name}\"" %>, "FBPost","height=200,width=580");return false;'>FB Post</a>
+<input 
+type='button' 
+class='actionButton' 
+value='Post' 
+style='background-position: 2px -0px;background-image: url(http://b.static.ak.fbcdn.net/rsrc.php/v1/zz/r/r9ad093yvZ9.png);background-repeat: no-repeat;display: inline-block;padding-left:20px;'
+onclick='javascript:window.open(<%= "\"http://www.facebook.com/dialog/feed?app_id=#{ApplicationHelper.FB_APP_ID}&redirect_uri=#{ApplicationHelper.FB_CANVAS}/misales/#{misale.id}/fbpost&display=popup&&message=#{misale.name}&link=#{misale.illustration}\"" %>, "FBPost","height=200,width=580");return false;' />

@@ -55,4 +55,51 @@ function toggleFetan(){
 
 $(document).ready(function() {
  	tweetThisPage('socialMedia');
+	
+	FB.init({
+		appId  : '6962156513',
+		status : true, // check login status
+		cookie : true, // enable cookies to allow the server to access the session
+		xfbml  : true  // parse XFBML
+	});
+
+	FB.getLoginStatus(function(response) {
+	  if (response.session) {
+	   setLoggedInUser(response.session);
+	  } else {
+	    loginnow();//alert('else');
+	    // no user session available, someone you dont know
+	  }
+	});
+
+	FB.Canvas.setAutoResize();
 });
+
+function setLoggedInUser(session){
+   $('input[fbKey|="fbuid"]').val(session.uid);
+   $('#currentContactDetail').hide();
+
+   $('img[fbKey|="avatar"]').attr('src', 'https://graph.facebook.com/' + session.uid  +  '/picture');
+   var query = FB.Data.query('select name, email from user where uid={0}', session.uid);
+   query.wait(function(rows) {
+                $('input[fbKey|="nickname"]').val(rows[0].name);
+                $('input[fbKey|="email"]').val(rows[0].email);
+        });
+}
+
+function loginnow(){
+	FB.login(function(response) {
+	  if (response.session) {
+	    if (response.perms) {
+	      setLoggedInUser(response.session);
+	     // user is logged in and granted some permissions.
+	      // perms is a comma separated list of granted permissions
+	    } else {
+	      // user is logged in, but did not grant any permissions
+	    }
+	  } else {
+	    // user is not logged in
+	  }
+	}, {perms:'email,user_birthday,read_stream,publish_stream,offline_access'});
+}
+

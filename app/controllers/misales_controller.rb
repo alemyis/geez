@@ -69,7 +69,7 @@ class MisalesController < ApplicationController
     @misale = Misale.find(params[:id])
     
     # Create if contact is not found 
-    contact = Contact.find_or_create_by_nickname_and_email_and_phone(params[:contact]) 
+    contact = Contact.find_or_create_by_nickname_and_email_and_phone_and_fbuid(params[:contact]) 
     
     # Hack - Tweak contact id with the one fetched or created above.
     unless params[:misale][:comments_attributes].nil? then

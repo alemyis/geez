@@ -6,13 +6,16 @@
 			<% if builder.object.new_record? %>
 			    <br/>
 				<div style='padding-left:10px;'>
-					Your comment *
-					<%= builder.hidden_field :contact_id %>
-					<%= builder.input :comment, :label => false, :input_html => { :rows => 4, :class => 'inputfield' } %>
-					<%= render 'contacts/contact', :f => builder %>
+                    <%= builder.hidden_field :contact_id %>
+                    &nbsp;&nbsp;&nbsp;&nbsp;Your comment
+                    <br/>
+                    <img style='float:left'  fbKey='avatar'/>
+                    <%= builder.input :comment, :label => false, :input_html => { :rows => 4, :class => 'inputfield' } %>
+                    <%= render 'contacts/contact', :f => builder %>
 				</div>
 			<% else %>
 			    <div class='comment'>
+			    	<img fbKey='<%= "https://graph.facebook.com/#{builder.object.contact.phone}/picture" %>'/>
 					<%= builder.object.contact.nickname %>    [<%= builder.object.created_at.to_date %>]
 					<div class="comment-bubble">
 						<%= builder.object.comment %>
@@ -23,7 +26,7 @@
 		<% end %>
 	
 		<div class="actions">
-			<%= f.button :submit, :value => 'submit' %>
+			<%= f.button :submit, :value => 'submit', :class => 'actionButton' %>
 		</div>
 	<% end %>
 </div>

@@ -77,7 +77,7 @@ class ChallengesController < ApplicationController
     @challenge = Challenge.find(params[:id])
 
     # Create if contact is not found 
-    contact = Contact.find_or_create_by_nickname_and_email_and_phone(params[:contact]) 
+    contact = Contact.find_or_create_by_nickname_and_email_and_phone_and_fbuid(params[:contact]) 
     
     # Major hack. Tweak contact_id parameter for answer object. Use ID from the above contact
     params[:challenge][:categorizations_attributes].each_value do |category_value|

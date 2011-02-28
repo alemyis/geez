@@ -12,6 +12,6 @@ module ApplicationHelper
   end 
   
   def self.FB_CANVAS
-    'http://ec2-50-16-134-117.compute-1.amazonaws.com:90'
+    'http://50.16.134.117:90'
   end
 end

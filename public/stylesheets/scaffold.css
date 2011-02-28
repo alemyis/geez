@@ -32,7 +32,7 @@ div.field, div.actions {
 }
 #page {
 background-color: #f0f0f0;
-width: 950px;
+width: 760px;
 margin: 0;
 margin-left: auto;
 margin-right: auto;
@@ -44,8 +44,9 @@ background-color: white;
 border: 3px solid #aaa;
 border-top: none;
 padding: 25px;
-width: 700px;
+width: 754px;
 }
+/*
 #sidebar-left{
 	width: 200px;
 	position: absolute;
@@ -55,7 +56,7 @@ width: 700px;
 #sidebar {
 float: right;
 width: 175px;
-}
+}*/
 
 #footer {
 clear: both;
@@ -335,7 +336,8 @@ img#tinyillustration:hover{
 
 .activechallenge,
 .closedchallenge,
-.itemid {
+.itemid,
+.actionButton {
 	background-color:#FFEFC6;
 }
 
@@ -495,4 +497,14 @@ img#tinyillustration:hover{
   width:0;
   height:0;
   position:absolute;
+}
+
+.actionButton{
+	/*border:1px solid #AE0000;*/
+	border-radius: 5px;
+	cursor:pointer;
+	-moz-border-radius:5px;
+    -webkit-border-radius:5px;
+	-moz-box-shadow:0 0 5px #888888;
+    -webkit-box-shadow:0 0 5px #888888;
 }

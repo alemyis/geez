@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(:version => 20110218060738) do
     t.string   "nickname"
     t.string   "email"
     t.string   "phone"
+    t.string   "fbuid"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
