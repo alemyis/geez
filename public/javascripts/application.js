@@ -54,7 +54,7 @@ function toggleFetan(){
 }
 
 $(document).ready(function() {
- 	tweetThisPage('socialMedia');
+ 	//tweetThisPage('socialMedia');
 	
 	FB.init({
 		appId  : '6962156513',
