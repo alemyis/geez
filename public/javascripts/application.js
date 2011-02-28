@@ -13,6 +13,15 @@ function geezKeyboard() {
 		$(this).focusout(function(){
 			keyboardOutFocus($(this));
 		});
+		
+		$(this).dblclick(function(){
+			if (kbd.isVisible()) {
+				keyboardOutFocus($(this));
+			}
+			else {
+				keyboardInFocus($(this));
+			}
+		});
 	});
 		
 	$('textarea').each(function(index){
@@ -24,25 +33,27 @@ function geezKeyboard() {
 			keyboardOutFocus($(this));
 		});
 	});
-
- 	kbd = new google.elements.keyboard.Keyboard(
-		[google.elements.keyboard.LayoutCode.ETHIOPIC],
-		inputControls);
 		
-	kbd.setVisible(false);
 } 
 function keyboardInFocus(inputControl){
-	kbd.setVisible(true);
-	$('#kbd').attr('style', '');
-	$('#kbd').attr('style', 'visibility: visible; position: absolute;');
+	kbd = new google.elements.keyboard.Keyboard(
+		[google.elements.keyboard.LayoutCode.ETHIOPIC],
+		[inputControl.attr('id')]);
+	//kbd.setVisible(false);
+	$('#kbd').css('position', 'absolute');
+	$('#kbd').css('right', '');
+	$('#kbd').css('bottom', '');
 	$('#kbd').css('top', inputControl.position().top + inputControl.height() + 10);
-	$('#kbd').css('left', inputControl.position().left);
+	//don't let the keyboard run off the screen on the right
+	var left = $('#page').position().left + $('#page').width() - $('#kbd').width();
+	left = inputControl.position().left < left ? inputControl.position().left : left;
+	$('#kbd').css('left', left);
+	$('#kbd').show();
 }
 
 function keyboardOutFocus(inputControl){
+	$('#kbd').hide();
 	kbd.setVisible(false);
-	$('#kbd').attr('style', '');
-	$('#kbd').attr('style', 'position: absolute;');
 }
 
 function tweetThisPage(containerId){
