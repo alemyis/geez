@@ -1,22 +1,90 @@
 // Place your application-specific JavaScript functions and classes here
 // This file is automatically included by javascript_include_tag :defaults
 
-
+var kbd;
 
 function geezKeyboard() {
+	var inputControls = new Array();
 	$('input[type=text]').each(function(index){
-		var kbd = new google.elements.keyboard.Keyboard(
-      		[google.elements.keyboard.LayoutCode.ETHIOPIC],
-      		[$(this).attr('id')]);
-		kbd.setVisible(false);
+		inputControls[index] = $(this).attr('id');
+		$(this).focusin(function(){
+			keyboardInFocus($(this));
+		});
+		$(this).focusout(function(){
+			keyboardOutFocus($(this));
+		});
+	});
+		
+	$('textarea').each(function(index){
+		inputControls[inputControls.length + index] = $(this).attr('id');
+		$(this).focusin(function(){
+			keyboardInFocus($(this));
+		});
+		$(this).focusout(function(){
+			keyboardOutFocus($(this));
+		});
+	});
+
+ 	kbd = new google.elements.keyboard.Keyboard(
+		[google.elements.keyboard.LayoutCode.ETHIOPIC],
+		inputControls);
+		
+	kbd.setVisible(false);
+} 
+function keyboardInFocus(inputControl){
+	kbd.setVisible(true);
+	$('#kbd').attr('style', '');
+	$('#kbd').attr('style', 'visibility: visible; position: absolute;');
+	$('#kbd').css('top', inputControl.position().top + inputControl.height() + 10);
+	$('#kbd').css('left', inputControl.position().left);
+}
+
+function keyboardOutFocus(inputControl){
+	kbd.setVisible(false);
+	$('#kbd').attr('style', '');
+	$('#kbd').attr('style', 'position: absolute;');
+}
+function ageezKeyboard() {
+	var inputControls = new Array();
+	$('input[type=text]').each(function(index){
+		inputControls[index] = $(this).attr('id');
+		
+		// put the virtual keyboard right bellow the input box
+		$(this).focusin(function(){
+			kbd.setVisible(true);
+			$('#kbd').attr('style', '');
+			$('#kbd').attr('style', 'visibility: visible; position: absolute;');
+			$('#kbd').css('top', $(this).position().top + $(this).height() + 15);
+			$('#kbd').css('left', $(this).position().left);
+		});
+		$(this).focusout(function(){
+			kbd.setVisible(false);
+			$('#kbd').attr('style', '');
+		});
 	});
 	
+	
 	$('textarea').each(function(index){
-		var kbd = new google.elements.keyboard.Keyboard(
-      		[google.elements.keyboard.LayoutCode.ETHIOPIC],
-      		[$(this).attr('id')]);
-		kbd.setVisible(false);
+		inputControls[inputControls.length + index] = $(this).attr('id');
+
+		// put the virtual keyboard right bellow the input box
+		$(this).focusin(function(){
+			kbd.setVisible(true);
+			$('#kbd').attr('style', '');
+			$('#kbd').attr('style', 'visibility: visible; position: absolute;');
+			$('#kbd').css('top', $(this).position().top + $(this).height() + 15);
+			$('#kbd').css('left', $(this).position().left);
+		});
+		$(this).focusout(function(){
+			kbd.setVisible(false);
+			$('#kbd').attr('style', '');
+		});
 	});
+	
+	
+	kbd = new google.elements.keyboard.Keyboard(
+      		[google.elements.keyboard.LayoutCode.ETHIOPIC],
+			inputControls);
 	
 }
 
