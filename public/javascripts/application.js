@@ -7,6 +7,7 @@ function geezKeyboard() {
 	var inputControls = new Array();
 	$('input[type=text]').each(function(index){
 		inputControls[index] = $(this).attr('id');
+		/*
 		$(this).focusin(function(){
 			keyboardInFocus($(this));
 		});
@@ -17,37 +18,51 @@ function geezKeyboard() {
 		$(this).dblclick(function(){
 			if (kbd.isVisible()) {
 				keyboardOutFocus($(this));
+				kbd.setVisible(false);
 			}
 			else {
 				keyboardInFocus($(this));
 			}
 		});
+		*/
 	});
 		
 	$('textarea').each(function(index){
 		inputControls[inputControls.length + index] = $(this).attr('id');
+		/*
 		$(this).focusin(function(){
 			keyboardInFocus($(this));
 		});
 		$(this).focusout(function(){
 			keyboardOutFocus($(this));
 		});
+		$(this).dblclick(function(){
+			if (kbd.isVisible()) {
+				keyboardOutFocus($(this));
+				kbd.setVisible(false);
+			}
+			else {
+				keyboardInFocus($(this));
+			}
+		});
+		*/
 	});
+	
+	kbd = new google.elements.keyboard.Keyboard(
+		[google.elements.keyboard.LayoutCode.ETHIOPIC],
+		inputControls);
+		
+	var bottom = $(document).height() - $('#page').height() + 100;
+	$('#kbd').css('bottom', bottom);
 		
 } 
 function keyboardInFocus(inputControl){
-	kbd = new google.elements.keyboard.Keyboard(
-		[google.elements.keyboard.LayoutCode.ETHIOPIC],
-		[inputControl.attr('id')]);
-	//kbd.setVisible(false);
-	$('#kbd').css('position', 'absolute');
-	$('#kbd').css('right', '');
-	$('#kbd').css('bottom', '');
-	$('#kbd').css('top', inputControl.position().top + inputControl.height() + 10);
+	kbd.setVisible(true);
+	var bottom = $(document).height() - inputControl.position().top - inputControl.height();
 	//don't let the keyboard run off the screen on the right
-	var left = $('#page').position().left + $('#page').width() - $('#kbd').width();
-	left = inputControl.position().left < left ? inputControl.position().left : left;
-	$('#kbd').css('left', left);
+	var right = $(document).width() - inputControl.position().left - inputControl.width();
+	$('#kbd').css('right', right);
+	$('#kbd').css('bottom', bottom);
 	$('#kbd').show();
 }
 
@@ -108,8 +123,13 @@ $(document).ready(function() {
 	  }
 	});
 
-	FB.Canvas.setAutoResize();
+	FB.Canvas.setSize({ height: frameSize() });
 });
+
+function frameSize(){
+        return $('#page').height() + $('#footer').height();
+}
+
 
 function setLoggedInUser(session){
    $('input[fbKey|="fbuid"]').val(session.uid);

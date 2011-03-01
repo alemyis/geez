@@ -11,10 +11,10 @@
 			<span class='geeztext tailtext <%= @fetan ? "hidden" : "" %>'><%= misale.tail %></span>
 			<br/><br/>
 			<div class='contentActionLinks'>
-				<%= link_to ApplicationHelper.get_value(:link, :link), misale %>
-				<%= link_to ApplicationHelper.get_value(:edit, :edit), edit_misale_path(misale) %>
-				<span class="comment-count-bubble">
-					<%= link_to misale.comments.count , misale %>
+				<%#= link_to ApplicationHelper.get_value(:link, :link), misale %>
+				<%#= link_to ApplicationHelper.get_value(:edit, :edit), edit_misale_path(misale) %>
+				<span class="comment-count-bubble" style='display:none;'>
+					<%#= link_to misale.comments.count , misale %>
 				  <span class="comment-count-bubble-arrow"></span>
 				</span>
 			</div>
