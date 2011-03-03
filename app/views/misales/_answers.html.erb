@@ -8,11 +8,11 @@
 		<div class='section_header'><%= ApplicationHelper.get_value(:responses, :responses)  %>:</div>
 		<div class='comment'>
 		<% for answer in categorization.answers %>
-			<%= answer.contact.nickname %>    [<%= answer.created_at.to_date %>]
-					<div class="comment-bubble">
-						<%= answer.response %>
-					  <div class="comment-bubble-arrow"></div>
-					</div>
+			<%= render :partial => 'contacts/user', :locals => {:u => answer.contact, :d => answer.created_at } %>
+			<div class="comment-bubble">
+				<%= answer.response %>
+				<div class="comment-bubble-arrow"></div>
+			</div>
 		<% end %>
 		</div>
 	<% end %>

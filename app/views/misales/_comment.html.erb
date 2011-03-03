@@ -15,8 +15,7 @@
 				</div>
 			<% else %>
 			    <div class='comment'>
-			    	<img src='<%= "https://graph.facebook.com/#{builder.object.contact.fbuid}/picture" %>'/>
-					<%= builder.object.contact.nickname %>    [<%= builder.object.created_at.to_date %>]
+			    	<%= render :partial => 'contacts/user', :locals => {:u => builder.object.contact, :d => builder.object.created_at } %>
 					<div class="comment-bubble">
 						<%= builder.object.comment %>
 					  <div class="comment-bubble-arrow"></div>

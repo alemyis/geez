@@ -10,7 +10,7 @@ body, p, ol, ul, td {
   line-height: 18px;
 }
 body{
-  	background-color: #f0f0f0;
+  	/*background-color: #f0f0f0;*/
 }
 
 pre {
@@ -19,9 +19,9 @@ pre {
   font-size: 11px;
 }
 
-a { color: #AE0000; }
-a:visited { color: #AE0000; }
-a:hover { color: #fff; background-color:#000; }
+a { color: #EE2B76; }
+a:visited { color: #EE2B76; }
+a:hover { color: #005288; background-color:#000; }
 
 h1 {
 	font-size: 28px;
@@ -31,17 +31,22 @@ div.field, div.actions {
   margin-bottom: 10px;
 }
 #page {
-background-color: #f0f0f0;
 width: 730px;
-margin: 0;
+margin-top: 10px;
 margin-left: auto;
 margin-right: auto;
+border-radius: 10px;
+-moz-border-radius:10px;
+-webkit-border-radius:10px;
+-moz-box-shadow:0 0 10px #BFD730;
+-webkit-box-shadow:0 0 10px #BFD730;
+padding: 5px;
+background-color: #FFFFFF;
 }
 
 #content {
 float: left;
-background-color: white;
-border: 3px solid #aaa;
+/*background-color: white;*/
 border-top: none;
 padding: 5px;
 width: 720px;
@@ -53,10 +58,10 @@ width: 720px;
 	top:200px;
 	text-align: right;
 }
+*/
 #sidebar {
-float: right;
-width: 175px;
-}*/
+	display: none;
+}
 
 #footer {
 clear: both;
@@ -231,7 +236,7 @@ border-bottom: 1px solid #ccc;
 	margin: 5px 5px 5px 0px;
 	padding: 3px 3px 3px 3px;
 	float:left;
-	color: #AE0000;
+	color: #EE2B76;
 	font-size:14pt;
 	width: 100px;
 	border: 1px solid black;
@@ -249,7 +254,7 @@ border-bottom: 1px solid #ccc;
 
 .section_header{
 	font-size: 12pt;
-	color: #AE0000;
+	color: #EE2B76;
 	margin-bottom:  5px;
 }
 
@@ -258,9 +263,10 @@ border-bottom: 1px solid #ccc;
 }
 
 img#illustration{
-	width: 70px;
+	width: 200px;
+	float:right;
 }
-img#illustration:hover{
+img#illustration-del:hover{
 	width: 200px;
 	z-index: 10;
 	position:absolute;
@@ -330,15 +336,21 @@ img#tinyillustration:hover{
 .closedchallenge{
 	padding: 5px 5px 5px 5px;
 	border: 2px solid #FFEFC6;
-	-moz-border-radius: 0.25em 0.25em 0.25em 0.25em;
+	-moz-border-radius: 5px;
+    -webkit-border-radius:5px;
 	border-radius: 10px;
+	border-color: #00B19D transparent transparent transparent;
+	border-style: solid;
+	border-width: 5px;
+	-moz-box-shadow:0 0 5px #BFD730;
+	-webkit-box-shadow:0 0 5px #BFD730;
 }
 
 .activechallenge,
 .closedchallenge,
 .itemid,
 .actionButton {
-	background-color:#FFEFC6;
+	background-color:#BFD730; 
 }
 
 .activechallenge,
@@ -348,7 +360,7 @@ img#tinyillustration:hover{
 
 .challengetitle{
 	margin-left: 50px;
-	color:#AE0000;
+	color:#EE2B76;
 }
 
 .challengenote{
@@ -358,6 +370,7 @@ img#tinyillustration:hover{
 
 .comment{
 	padding-left:5px;
+	clear:both;
 }
 
 .inputfield{
@@ -367,7 +380,7 @@ img#tinyillustration:hover{
 .geeztext{
 	font-size:12pt;	
 	padding-left: 10px;
-	color: #AE0000;
+	color: #EE2B76;
 }
 
 .headtext,
@@ -386,6 +399,26 @@ img#tinyillustration:hover{
 .pagination{
 	width:100%;
 	text-align:center;
+}
+
+.pagination em{
+	background: none repeat scroll 0 0 #99CC33;
+    border-color: #99CC33;
+    color: #FFFFFF;
+	padding: 5px;
+	border-radius: 2px;
+	-moz-border-radius:2px;
+    -webkit-border-radius:2px;
+}
+.pagination a, 
+.pagination span{
+    color: #B7B7B7;
+	padding: 5px;
+	border-radius: 2px;
+	-moz-border-radius:2px;
+    -webkit-border-radius:2px;
+    border: 1px solid #E1E1E1;
+	text-decoration:none;
 }
 
 #socialMedia{
@@ -418,7 +451,7 @@ img#tinyillustration:hover{
 
 .comment-count-bubble {
   /*background-color:#FFEFDD;*/
-  border:1px solid #AE0000;
+  border:1px solid #EE2B76;
   margin:0;
   padding:0px 2px 0px 5px;
   position:relative;
@@ -435,7 +468,7 @@ img#tinyillustration:hover{
 }
 
 .comment-count-bubble-arrow {
-  border-color: #AE0000 transparent transparent #AE0000;
+  border-color: #EE2B76 transparent transparent #EE2B76;
   border-style: solid;
   border-width: 4px;
   height:0;
@@ -477,7 +510,7 @@ img#tinyillustration:hover{
 }
 
 .next_page{
-	float:right;
+	/*float:right;*/
 }
 .nav_next{
   border-color: transparent transparent transparent #AE0000;
@@ -487,7 +520,7 @@ img#tinyillustration:hover{
   height:0;
 }
 .prev_page{
-	float:left;
+	/*float:left;*/
 }
 .nav_prev{
   border-color: transparent #AE0000 transparent transparent;
@@ -495,16 +528,27 @@ img#tinyillustration:hover{
   border-width: 10px;
   width:0;
   height:0;
-  position:absolute;
 }
 
 .actionButton{
 	/*border:1px solid #AE0000;*/
-	border-color: #FFEFC6 #FFEFC6 #FFEFC6 #FFEFC6;
+	border-color: #BFD730 #BFD730 #BFD730 #BFD730;
 	border-radius: 5px;
 	cursor:pointer;
 	-moz-border-radius:5px;
     -webkit-border-radius:5px;
 	-moz-box-shadow:0 0 5px #888888;
     -webkit-box-shadow:0 0 5px #888888;
+}
+
+.avatar{
+	border-width:3px;
+	border-style: solid;
+	border-radius: 5px;
+	-moz-border-radius:5px;
+    -webkit-border-radius:5px;
+	-moz-box-shadow:0 0 5px #888888;
+    -webkit-box-shadow:0 0 5px #888888;
+	border-color: transparent transparent transparent transparent;
+	
 }

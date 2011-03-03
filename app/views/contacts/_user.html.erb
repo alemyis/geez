@@ -1,0 +1,6 @@
+<% if u.fbuid.nil? then %>
+	<img class='avatar' src='https://graph.facebook.com/1274325412/picture'/>
+<% else %>
+	<img class='avatar' src='<%= "https://graph.facebook.com/#{u.fbuid}/picture" %>'/>
+<% end %>
+<%= u.nickname %>    [<%= d.to_date %>]

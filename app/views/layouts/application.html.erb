@@ -11,22 +11,18 @@
   </head>
   <body>
     <div id="page">
-    	<div id="fb-root"></div>
-      <div id="content">
-    	<div class='navmenu'>
-			<div class='navmenuitem'><%= link_to ApplicationHelper.get_value(:misales, 'Misales') , misales_path %></div>
-			<div class='navmenuitem'><%= link_to ApplicationHelper.get_value(:challenges, 'Challenges'), challenges_path %></div>
-			<div class='navmenuitem'><%= render :partial => 'misales/fetan' %></div>
-		</div>
-		<div class='search'>
-			<%= render :partial => 'misales/search' %>
-		</div>
-        <div id="header">
+      <div>
+        <div style='clear:both;'>
+	    	<div class='navmenu'>
+				<div class='navmenuitem'><%= link_to ApplicationHelper.get_value(:misales, 'Misales') , misales_path %></div>
+				<div class='navmenuitem'><%= link_to ApplicationHelper.get_value(:challenges, 'Challenges'), challenges_path %></div>
+				<div class='navmenuitem'><%= render :partial => 'misales/fetan' %></div>
+			</div>
+			<div class='search'>
+				<%= render :partial => 'misales/search' %>
+			</div>
         </div>
-
-        <div id="about">
-        </div>
-		<div>
+		<div style='clear:both;'>
 			<%= yield %>
 		</div>
          
@@ -35,7 +31,6 @@
       <div id="footer">
   	      <div id="sidebar">
 	        <ul id="sidebar-items">
-	          <li></div><br/><br/></li>
 	          <li>
 	            <h3>Helpful links</h3>
 	            <ul class="links">
@@ -45,6 +40,7 @@
 	        </ul>
 	      </div>
       </div>
+      <div id="fb-root"></div>
     </div>
   </body>
 </html>

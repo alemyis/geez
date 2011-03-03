@@ -1,6 +1,6 @@
 <div>
 	<div class='misaleheader' misale='<%= misale.head %>'>
-		<div class='itemid'>#<%= misale.id %></div>
+		<div class='itemid' style='display:none;'>#<%= misale.id %></div>
 		<div class='itemContent'>
 			<div class='tweetThisContent'>
 				<%= render :partial => 'misales/fbPost', :locals => { :misale => misale } %>
