@@ -21,7 +21,7 @@ pre {
 
 a { color: #EE2B76; }
 a:visited { color: #EE2B76; }
-a:hover { color: #005288; background-color:#000; }
+a:hover { color: #005288;}
 
 h1 {
 	font-size: 28px;
@@ -230,23 +230,42 @@ border-bottom: 1px solid #ccc;
 	/*padding:10px 0px 20px 300px*/
 }
 
+.curvy-five {
+	border-radius: 5px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+}
+
+.curvy-ten {
+	border-radius: 10px;
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+}
+
+
+.top-line-bluegreen-five{
+	background-image: url(/images/bluegreen.png);
+}
+	
+.top-line-bluegreen-ten{
+	background-image: url(/images/bluegreen-10.png);
+}
+
+.top-line-bluegreen{
+	background-repeat: repeat-x;
+	border-color: transparent transparent transparent transparent;
+	border-width: 0px;
+}
 
 .navmenuitem{
 	background-color: white;
 	margin: 5px 5px 5px 0px;
-	padding: 3px 3px 3px 3px;
+	padding: 5px 3px 3px 3px;
 	float:left;
 	color: #EE2B76;
 	font-size:14pt;
 	width: 100px;
-	border: 1px solid black;
 	text-align: center;
-	border-width: 3px;
-	border-style: solid;
-	border-color: #aaa #aaa #aaa #aaa;
-	
-  -moz-border-radius:5px;
-  -webkit-border-radius:5px;
 }
 .navmenuitem a{
 	text-decoration:none;
@@ -331,19 +350,15 @@ img#tinyillustration:hover{
 .itemContent{
 	margin-left: 50px;
 }
+.shadow-light-green{
+	-moz-box-shadow:0 0 5px #BFD730;
+	-webkit-box-shadow:0 0 5px #BFD730;
+}
+
 .misaleheader,
 .activechallenge,
 .closedchallenge{
-	padding: 5px 5px 5px 5px;
-	border: 2px solid #FFEFC6;
-	-moz-border-radius: 5px;
-    -webkit-border-radius:5px;
-	border-radius: 10px;
-	border-color: #00B19D transparent transparent transparent;
-	border-style: solid;
-	border-width: 5px;
-	-moz-box-shadow:0 0 5px #BFD730;
-	-webkit-box-shadow:0 0 5px #BFD730;
+	padding: 15px 5px 5px 5px;
 }
 
 .activechallenge,

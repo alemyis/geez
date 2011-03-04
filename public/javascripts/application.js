@@ -52,7 +52,7 @@ function geezKeyboard() {
 		[google.elements.keyboard.LayoutCode.ETHIOPIC],
 		inputControls);
 		
-	var bottom = $(document).height() - $('#page').height() + 100;
+	var bottom = contentSize() + 200;
 	$('#kbd').css('bottom', bottom);
 		
 } 
@@ -127,7 +127,10 @@ $(document).ready(function() {
 });
 
 function frameSize(){
-        return $('#page').height() + $('#footer').height();
+        return Math.max( contentSize(), 1000);
+}
+function contentSize(){
+	return $('#page').height() + $('#footer').height();
 }
 
 

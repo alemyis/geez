@@ -1,5 +1,5 @@
 <div id='fetanGameMode'>
-<a href='javascript:toggleFetan()'><%= ApplicationHelper.get_value(:fetan, 'Fetan ') %> <span style='height:5px; width:5px;color:<%= @fetan ? "green" : "red" %>;background-color:<%= @fetan ? "green" : "red" %>'>.</span></a>
+<a href='javascript:toggleFetan()'><%= ApplicationHelper.get_value(:fetan, 'Fetan ') %> <% if @fetan then %><span style="color:green">&#10004;</span><% else %>&times;<% end %></a>
 </div>
 
 	

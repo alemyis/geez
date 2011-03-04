@@ -40,9 +40,9 @@ misale37 = Misale.create(:head => 'ዶሮን ሲያታልሏት', :tail => 'በ�
 misale38 = Misale.create(:head => 'ዉሃ ቢወቅጡት', :tail => 'እምቦጭ', :illustration => '')
 
 
-contact1 = Contact.create(:nickname => 'Alex', :email => 'alemyis@gmail.com', :phone => 12341234)
-contact2 = Contact.create(:nickname => 'Zoro', :email => 'zoro@gmail.com', :phone => 12341234)
-contact3 = Contact.create(:nickname => 'Ekele', :email => 'ekele@gmail.com', :phone => 12341234)
+contact1 = Contact.create(:nickname => 'Alex', :email => 'alemyis@gmail.com', :phone => 12341234, :fbuid => '671605376')
+contact2 = Contact.create(:nickname => 'Zoro', :email => 'zoro@gmail.com', :phone => 12341234, :fbuid => '671605376')
+contact3 = Contact.create(:nickname => 'Ekele', :email => 'ekele@gmail.com', :phone => 12341234, :fbuid => '671605375')
 
 challenge1 = Challenge.create(:title => 'ሳምንት 1', :note => 'የሳምንት 1 ጥያቄዎች')
 challenge2 = Challenge.create(:title => 'ሳምንት 2', :note => 'የሳምንት 2 ጥያቄዎች', :status => 1)
