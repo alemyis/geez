@@ -127,11 +127,13 @@ $(document).ready(function() {
 });
 
 function frameSize(){
-        return Math.max( contentSize(), 1000);
+        return Math.max( contentSize(), 800);
 }
+
 function contentSize(){
-	return $('#page').height() + $('#footer').height();
+        return $('#page').height() + $('#footer').height() + 200;
 }
+
 
 
 function setLoggedInUser(session){
