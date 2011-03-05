@@ -42,7 +42,8 @@ border-radius: 10px;
 -webkit-box-shadow:0 0 10px #BFD730;
 box-shadow: 0 0 10px #BFD730;
 padding: 5px;
-background-color: #FFFFFF;
+	background-image: url(/images/bg2.png);
+	background-repeat: no-repeat;
 }
 
 #content {
@@ -362,6 +363,7 @@ img#tinyillustration:hover{
 	padding: 15px 5px 5px 5px;
 	width:500px;
 	margin-left:115px;
+	background-color: #FFFFFF;
 }
 
 .activechallenge,
@@ -560,7 +562,7 @@ img#tinyillustration:hover{
     -webkit-border-radius:5px;
 	-moz-box-shadow:0 0 5px #888888;
     -webkit-box-shadow:0 0 5px #888888;
-	box-shadow: 0 0 0 #888888;
+	box-shadow: 0 0 5px #888888;
 }
 
 .avatar{
@@ -571,7 +573,7 @@ img#tinyillustration:hover{
     -webkit-border-radius:5px;
 	-moz-box-shadow:0 0 5px #888888;
     -webkit-box-shadow:0 0 5px #888888;
-	box-shadow: 0 0 0 #888888;
+	box-shadow: 0 0 5px #888888;
 	border-color: transparent transparent transparent transparent;
 	
 }
