@@ -85,13 +85,16 @@ google.load("elements", "1", {packages: "keyboard"});
 google.setOnLoadCallback(geezKeyboard);
 
 
-function revealMisale(sender){
+function revealMisale(sender, cssClass){
 	var originator = $(sender);
-	
 	originator.hide();
-	originator.next().removeClass('hidden');
-	var misaleId = originator.attr('misale');
-	$('[misale|="' + misaleId + '"]').removeClass('hidden');
+	
+	
+	$('.' + cssClass).removeClass(cssClass);
+	//$('[class|="' + cssClass + '"]').removeClass(cssClass);
+	//originator.next().removeClass('hidden');
+	//var misaleId = originator.attr('misale');
+	//$('[misale|="' + misaleId + '"]').removeClass('hidden');
 }
 
 function toggleFetan(){

@@ -1,16 +1,11 @@
-<% unless misale.illustration.empty? then %>
-	<div>
-	 	<img id='illustration' misale='<%= misale.head %>' align='right' class='<%= @fetan ? "hidden" : "" %>' src='<%= misale.illustration %>' alt='illustration'/>
-	</div>
-<% end %>
 <div misale='<%= misale.head %>' class='<%= @fetan ? "hidden" : "" %>'>
 	<% for categorization in misale.categorizations %>
-		<div class='section_header'><%= ApplicationHelper.get_value(:responses, :responses)  %>:</div>
+		<%#<div class='section_header'><%= ApplicationHelper.get_value(:responses, :responses)  >:</div>%>
 		<div class='comment'>
 		<% for answer in categorization.answers %>
 			<%= render :partial => 'contacts/user', :locals => {:u => answer.contact, :d => answer.created_at } %>
 			<div class="comment-bubble">
-				<%= answer.response %>
+				<%= misale.head %>&nbsp;<u><%= answer.response %></u>
 				<div class="comment-bubble-arrow"></div>
 			</div>
 		<% end %>

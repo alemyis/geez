@@ -1,33 +1,33 @@
-<div misale='<%= misale.head %>' class='<%= @fetan ? "hidden" : "" %>'>
-<div class='section_header'><%= ApplicationHelper.get_value(:comments, :comments) %>:</div>
-<div class='comments'>	
-	<%= simple_form_for(misale) do |f| %>
-		<% f.fields_for :comments do |builder| %>
-			<% if builder.object.new_record? %>
-			    <br/>
-				<div style='padding-left:10px;'>
-                    <%= builder.hidden_field :contact_id %>
-                    &nbsp;&nbsp;&nbsp;&nbsp;Your comment
-                    <br/>
-                    <img style='float:left'  fbKey='avatar'/>
-                    <%= builder.input :comment, :label => false, :input_html => { :rows => 4, :class => 'inputfield' } %>
-                    <%= render 'contacts/contact', :f => builder %>
-				</div>
-			<% else %>
-			    <div class='comment'>
-			    	<%= render :partial => 'contacts/user', :locals => {:u => builder.object.contact, :d => builder.object.created_at } %>
-					<div class="comment-bubble">
-						<%= builder.object.comment %>
-					  <div class="comment-bubble-arrow"></div>
+<div class='<%= @fetan ? "fetanHidden" : "" %>' >
+	<%#<div class='section_header <%= @fetan ? "fetanHidden" : "" % >'>< %= ApplicationHelper.get_value(:comments, :comments) % >:</div>%>
+	<div class='comments'>	
+		<%= simple_form_for(misale) do |f| %>
+			<% f.fields_for :comments do |builder| %>
+				<% if builder.object.new_record? %>
+				    <br/>
+					<div style='padding-left:110px;'>
+	                    <%= builder.hidden_field :contact_id %>
+	                    &nbsp;&nbsp;&nbsp;&nbsp;Your comment
+	                    <br/>
+	                    <img style='float:left'  fbKey='avatar'/>
+	                    <%= builder.input :comment, :label => false, :input_html => { :rows => 4, :class => 'inputfield' } %>
+	                    <%= render 'contacts/contact', :f => builder %>
+						<div class="actions">
+							<%= f.button :submit, :value => 'submit', :class => 'actionButton' %>
+						</div>
 					</div>
-				</div>
+				<% else %>
+				    <div class='comment' class='<%= @fetan ? "fetan" : "" %>'>
+				    	<%= render :partial => 'contacts/user', :locals => {:u => builder.object.contact, :d => builder.object.created_at } %>
+						<div class="comment-bubble">
+							<%= builder.object.comment %>
+						  <div class="comment-bubble-arrow"></div>
+						</div>
+					</div>
+				<% end %>
 			<% end %>
+		
 		<% end %>
-	
-		<div class="actions">
-			<%= f.button :submit, :value => 'submit', :class => 'actionButton' %>
-		</div>
-	<% end %>
-</div>
+	</div>
 
 </div>

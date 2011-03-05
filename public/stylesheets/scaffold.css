@@ -19,9 +19,9 @@ pre {
   font-size: 11px;
 }
 
-a { color: #EE2B76; }
-a:visited { color: #EE2B76; }
-a:hover { color: #005288;}
+a { color: #005288; }
+a:visited { color: #005288; }
+a:hover { color: #EE2B76;}
 
 h1 {
 	font-size: 28px;
@@ -40,6 +40,7 @@ border-radius: 10px;
 -webkit-border-radius:10px;
 -moz-box-shadow:0 0 10px #BFD730;
 -webkit-box-shadow:0 0 10px #BFD730;
+box-shadow: 0 0 10px #BFD730;
 padding: 5px;
 background-color: #FFFFFF;
 }
@@ -237,9 +238,9 @@ border-bottom: 1px solid #ccc;
 }
 
 .curvy-ten {
-	border-radius: 10px;
-	-moz-border-radius:10px;
-	-webkit-border-radius:10px;
+	border-radius: 5px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
 }
 
 
@@ -263,7 +264,7 @@ border-bottom: 1px solid #ccc;
 	padding: 5px 3px 3px 3px;
 	float:left;
 	color: #EE2B76;
-	font-size:14pt;
+	font-size:12pt;
 	width: 100px;
 	text-align: center;
 }
@@ -281,15 +282,12 @@ border-bottom: 1px solid #ccc;
 	float:right;
 }
 
-img#illustration{
+illustration img{
 	width: 200px;
-	float:right;
+	/*float:right;*/
 }
-img#illustration-del:hover{
-	width: 200px;
-	z-index: 10;
-	position:absolute;
-	float:right;
+#illustration {
+	text-align:center;
 }
 img#tinyillustration{
 	width: 30px;
@@ -341,24 +339,29 @@ img#tinyillustration:hover{
 
 .itemid {
 	font-size:18pt;
-	float: left;
+	/*float: left;*/
+	width:50px;
 	padding: 5px;
 	border-radius: 5px;
 	-moz-border-radius:5px;
     -webkit-border-radius:5px;
 }
 .itemContent{
-	margin-left: 50px;
+	width:100%;
+	text-align:center;
 }
 .shadow-light-green{
 	-moz-box-shadow:0 0 5px #BFD730;
 	-webkit-box-shadow:0 0 5px #BFD730;
+	box-shadow: 0 0 5px #BFD730;
 }
 
 .misaleheader,
 .activechallenge,
 .closedchallenge{
 	padding: 15px 5px 5px 5px;
+	width:500px;
+	margin-left:115px;
 }
 
 .activechallenge,
@@ -395,7 +398,7 @@ img#tinyillustration:hover{
 .geeztext{
 	font-size:12pt;	
 	padding-left: 10px;
-	color: #EE2B76;
+	color: #005288; 
 }
 
 .headtext,
@@ -405,10 +408,10 @@ img#tinyillustration:hover{
 }
 
 .misaleBody{
-	margin: 0 10px 0 10px;
-	border-color: transparent #FFCFC6 #FFCFC6 #FFCFC6;
+	margin: 10px 10px 0 10px;
+	/*border-color: transparent #FFCFC6 #FFCFC6 #FFCFC6;
 	border-style: solid;
-	border-width: 1px;
+	border-width: 1px;*/
 }
 
 .pagination{
@@ -442,7 +445,7 @@ img#tinyillustration:hover{
 }
 
 .tweetThisContent{
-	float:right;
+	/*float:left;*/
 }
 .contentActionLinks{
 	width: 100%;
@@ -450,13 +453,16 @@ img#tinyillustration:hover{
 	font-size:large;
 }
 
+.fetanHidden,
 .hidden{
 	display:none;
 }
+
 .fetan{
 	text-decoration: underline;
 	cursor:pointer;
 }
+
 #fetanGameMode{
 	clear:both;
 }
@@ -466,7 +472,7 @@ img#tinyillustration:hover{
 
 .comment-count-bubble {
   /*background-color:#FFEFDD;*/
-  border:1px solid #EE2B76;
+  border:1px solid #005288;
   margin:0;
   padding:0px 2px 0px 5px;
   position:relative;
@@ -483,7 +489,7 @@ img#tinyillustration:hover{
 }
 
 .comment-count-bubble-arrow {
-  border-color: #EE2B76 transparent transparent #EE2B76;
+  border-color: #005288 transparent transparent #005288;
   border-style: solid;
   border-width: 4px;
   height:0;
@@ -554,6 +560,7 @@ img#tinyillustration:hover{
     -webkit-border-radius:5px;
 	-moz-box-shadow:0 0 5px #888888;
     -webkit-box-shadow:0 0 5px #888888;
+	box-shadow: 0 0 0 #888888;
 }
 
 .avatar{
@@ -564,6 +571,7 @@ img#tinyillustration:hover{
     -webkit-border-radius:5px;
 	-moz-box-shadow:0 0 5px #888888;
     -webkit-box-shadow:0 0 5px #888888;
+	box-shadow: 0 0 0 #888888;
 	border-color: transparent transparent transparent transparent;
 	
 }

@@ -1,34 +1,30 @@
 <div>
-	<div class='misaleheader curvy-ten shadow-light-green top-line-bluegreen top-line-bluegreen-ten' misale='<%= misale.head %>'>
-		<div class='itemid' style='display:none;'>#<%= misale.id %></div>
-		<div class='itemContent'>
-			<div class='tweetThisContent'>
-				<%= render :partial => 'misales/fbPost', :locals => { :misale => misale } %>
-				<%= render :partial => 'misales/tweetThisContent', :locals => { :misale => misale } %>
-			</div>
-			<span class='geeztext headtext'><%= misale.head %></span>
-			<span class='geeztext fetan tailtext <%= @fetan ? "" : "hidden" %>' misale='<%= misale.head %>' onclick='javascript:revealMisale(this)'>&nbsp;&nbsp;&nbsp;&nbsp;???&nbsp;&nbsp;&nbsp;&nbsp;</span>
-			<span class='geeztext tailtext <%= @fetan ? "hidden" : "" %>'><%= misale.tail %></span>
-			<br/><br/>
-			<div class='contentActionLinks'>
-				<%#= link_to ApplicationHelper.get_value(:link, :link), misale %>
-				<%#= link_to ApplicationHelper.get_value(:edit, :edit), edit_misale_path(misale) %>
-				<span class="comment-count-bubble" style='display:none;'>
-					<%#= link_to misale.comments.count , misale %>
-				  <span class="comment-count-bubble-arrow"></span>
-				</span>
+	<div align='center' class='itemContent'>
+		<div class='misaleheader curvy-five shadow-light-green top-line-bluegreen top-line-bluegreen-ten' misale='<%= misale.head %>'>
+			<div class='itemid' style='display:none;'>#<%= misale.id %></div>
+			<div style='text-align:center;'>
+				<span class='geeztext headtext'><%= misale.head %></span>
+				<span class='geeztext tailtext <%= @fetan ? "" : "fetanHidden" %>' misale='<%= misale.head %>' onclick='javascript:revealMisale(this, "fetanHidden")'>&nbsp;&nbsp;&nbsp;&nbsp;???&nbsp;&nbsp;&nbsp;&nbsp;</span>
+				<span class='geeztext tailtext <%= @fetan ? "fetanHidden" : "" %>'><%= misale.tail %></span>
+				<br/><br/>
+				<% unless misale.illustration.empty? then %>
+					<div class='illustration'>
+					 	<img width='300px' misale='<%= misale.head %>' align='middle' class='<%= @fetan ? "fetanHidden" : "" %>' src='<%= misale.illustration %>' alt='illustration'/>
+					</div>
+				<% end %>
+				<div class='contentActionLinks'>
+					<%#= link_to ApplicationHelper.get_value(:link, :link), misale %>
+					<%#= link_to ApplicationHelper.get_value(:edit, :edit), edit_misale_path(misale) %>
+					<span class="comment-count-bubble">
+						<%= link_to misale.comments.count , misale %>
+					  <span class="comment-count-bubble-arrow"></span>
+					</span>
+				</div>
+				<div class='tweetThisContent'>
+					<%= render :partial => 'misales/fbPost', :locals => { :misale => misale } %>
+					<%= render :partial => 'misales/tweetThisContent', :locals => { :misale => misale } %>
+				</div>
 			</div>
 		</div>
-	</div>
-	
-	<div class='hidden'>
-	  <b>Tag:</b>
-	  <%= misale.tag %>
-	  &nbsp;&nbsp;&nbsp;
-	  <b>Ye:</b>
-	  <%= misale.ye %>
-	  &nbsp;&nbsp;&nbsp;
-	  <b>Ne:</b>
-	  <%= misale.ne %>
 	</div>
 </div>
