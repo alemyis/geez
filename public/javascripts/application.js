@@ -110,7 +110,7 @@ $(document).ready(function() {
  	//tweetThisPage('socialMedia');
 	
 	FB.init({
-		appId  : '6962156513',
+		appId  : '196575340361945', //'6962156513',
 		status : true, // check login status
 		cookie : true, // enable cookies to allow the server to access the session
 		xfbml  : true  // parse XFBML
@@ -124,9 +124,8 @@ $(document).ready(function() {
 	    //loginnow();
 	    // no user session available, someone you dont know
 	  }
+	  FB.Canvas.setSize({ height: frameSize() + 100 });
 	});
-
-	FB.Canvas.setSize({ height: frameSize() });
 });
 
 function frameSize(){
