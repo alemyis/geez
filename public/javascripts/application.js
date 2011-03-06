@@ -1,51 +1,13 @@
-// Place your application-specific JavaScript functions and classes here
-// This file is automatically included by javascript_include_tag :defaults
-
 var kbd;
 
 function geezKeyboard() {
 	var inputControls = new Array();
 	$('input[type=text]').each(function(index){
 		inputControls[index] = $(this).attr('id');
-		/*
-		$(this).focusin(function(){
-			keyboardInFocus($(this));
-		});
-		$(this).focusout(function(){
-			keyboardOutFocus($(this));
-		});
-		
-		$(this).dblclick(function(){
-			if (kbd.isVisible()) {
-				keyboardOutFocus($(this));
-				kbd.setVisible(false);
-			}
-			else {
-				keyboardInFocus($(this));
-			}
-		});
-		*/
 	});
 		
 	$('textarea').each(function(index){
 		inputControls[inputControls.length + index] = $(this).attr('id');
-		/*
-		$(this).focusin(function(){
-			keyboardInFocus($(this));
-		});
-		$(this).focusout(function(){
-			keyboardOutFocus($(this));
-		});
-		$(this).dblclick(function(){
-			if (kbd.isVisible()) {
-				keyboardOutFocus($(this));
-				kbd.setVisible(false);
-			}
-			else {
-				keyboardInFocus($(this));
-			}
-		});
-		*/
 	});
 	
 	kbd = new google.elements.keyboard.Keyboard(
@@ -54,8 +16,13 @@ function geezKeyboard() {
 		
 	var bottom = contentSize() + 200;
 	$('#kbd').css('bottom', bottom);
-		
+	
+	setTimeout('keyBoardHelp()', 3000);
+	
 } 
+function keyBoardHelp(){
+	$("#kbd-help").attr('href', "http://help.keymanweb.com/keyboards/Keyboard_gff/AmharicTyping-English.pdf");
+}
 function keyboardInFocus(inputControl){
 	kbd.setVisible(true);
 	var bottom = $(document).height() - inputControl.position().top - inputControl.height();
@@ -91,10 +58,6 @@ function revealMisale(sender, cssClass){
 	
 	
 	$('.' + cssClass).removeClass(cssClass);
-	//$('[class|="' + cssClass + '"]').removeClass(cssClass);
-	//originator.next().removeClass('hidden');
-	//var misaleId = originator.attr('misale');
-	//$('[misale|="' + misaleId + '"]').removeClass('hidden');
 }
 
 function toggleFetan(){
