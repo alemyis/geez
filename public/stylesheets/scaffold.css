@@ -192,7 +192,11 @@ border-bottom: 1px solid #ccc;
   background-color: red;
   display: table;
 }
+#inlineAlert{
+	clear:both;
+}
 
+#inlineAlert,
 #error_explanation {
   width: 450px;
   border: 2px solid red;
@@ -200,6 +204,7 @@ border-bottom: 1px solid #ccc;
   padding-bottom: 0;
   margin-bottom: 20px;
   background-color: #f0f0f0;
+	margin-left:120px;
 }
 
 #error_explanation h2 {

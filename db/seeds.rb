@@ -77,14 +77,14 @@ answer13 = Answer.create(:contact_id => contact3.id, :categorization_id => categ
 answer14 = Answer.create(:contact_id => contact3.id, :categorization_id => categorization9.id, :response => 'ተረት ተረት ፣ የላም በረት ፣ አንድ ወፍ ነበረች ፣ እሺ ፣ እሽ ሲሏት በረረች ። cat9-cont3', :illustration => '')
 answer15 = Answer.create(:contact_id => contact3.id, :categorization_id => categorization10.id, :response => 'ተረት ተረት ፣ የላም በረት ፣ አንድ ወፍ ነበረች ፣ እሺ ፣ እሽ ሲሏት በረረች ። cat10-cont3', :illustration => '')
 
-comment1_1 = Comment.create(:contact_id => contact1.id, :comment =>'አበበ በሶ በላ ፣ ጫላ ጩቤ ጨበተ ፣  አበበ በሶ በላ ፣ ጫላ ጩቤ ጨበተ ፣  አበበ በሶ በላ ፣ ጫላ ጩቤ ጨበተ ፣  ', :misale_id => misale1.id)
+comment1_1 = Comment.create(:contact_id => contact1.id, :comment =>'አበበ በሶ በላ ፣ ጫላ ጩቤ ጨበጠ ፣  አበበ በሶ በላ ፣ ጫላ ጩቤ ጨበጠ ፣  አበበ በሶ በላ ፣ ጫላ ጩቤ ጨበጠ ፣  ', :misale_id => misale1.id)
 comment1_2 = Comment.create(:contact_id => contact2.id, :comment =>'ተረት ተረት ፣ የላም በረት ፣ አንድ ወፍ ነበረች ፣ እሺ ፣ እሽ ሲሏት በረረች ። ተረት ተረት ፣ የላም በረት ፣ አንድ ወፍ ነበረች ፣ እሺ ፣ እሽ ሲሏት በረረች ። ተረት ተረት ፣ የላም በረት ፣ አንድ ወፍ ነበረች ፣ እሺ ፣ እሽ ሲሏት በረረች ።', :misale_id => misale1.id)
 comment1_3 = Comment.create(:contact_id => contact3.id, :comment =>'orem ipsum dolor sit amet, consectetur adipiscing elit. Nulla tortor erat, aliquam sed dignissim non, vestibulum sit amet eros. Duis a nisl lacus. Nunc condimentum nulla nec libero varius posuere imperdiet mi auctor. Aenean convallis sem id augue dictum ornare. Etiam elementum facilisis purus ut tincidunt.', :misale_id => misale1.id)
 
-comment2_1 = Comment.create(:contact_id => contact1.id, :comment =>'አበበ በሶ በላ ፣ ጫላ ጩቤ ጨበተ ፣   አበበ በሶ በላ ፣ ጫላ ጩቤ ጨበተ ፣  ', :misale_id => misale2.id)
+comment2_1 = Comment.create(:contact_id => contact1.id, :comment =>'አበበ በሶ በላ ፣ ጫላ ጩቤ ጨበጠ ፣   አበበ በሶ በላ ፣ ጫላ ጩቤ ጨበጠ ፣  ', :misale_id => misale2.id)
 comment2_2 = Comment.create(:contact_id => contact2.id, :comment =>'orem ipsum dolor sit amet, consectetur adipiscing elit. Nulla tortor erat, aliquam sed dignissim non, vestibulum sit amet eros. Duis a nisl lacus. Nunc condimentum nulla nec libero varius posuere imperdiet mi auctor. Aenean convallis sem id augue dictum ornare. Etiam elementum facilisis purus ut tincidunt.', :misale_id => misale2.id)
 
-comment3_1 = Comment.create(:contact_id => contact3.id, :comment =>'አበበ በሶ በላ ፣ ጫላ ጩቤ ጨበተ ፣  አበበ በሶ በላ ፣ ጫላ ጩቤ ጨበተ ፣  አበበ በሶ በላ ፣ ጫላ ጩቤ ጨበተ ፣  አበበ በሶ በላ ፣ ጫላ ጩቤ ጨበተ ፣  ', :misale_id => misale3.id)
+comment3_1 = Comment.create(:contact_id => contact3.id, :comment =>'አበበ በሶ በላ ፣ ጫላ ጩቤ ጨበጠ ፣  አበበ በሶ በላ ፣ ጫላ ጩቤ ጨበጠ ፣  አበበ በሶ በላ ፣ ጫላ ጩቤ ጨበጠ ፣  አበበ በሶ በላ ፣ ጫላ ጩቤ ጨበጠ ፣  ', :misale_id => misale3.id)
 
 Lookup.create(:key => :responses, :value => 'መልሶች')
 Lookup.create(:key => :comments, :value => 'አስተያየቶች')

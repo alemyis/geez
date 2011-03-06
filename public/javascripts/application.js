@@ -19,6 +19,9 @@ function geezKeyboard() {
 	
 	setTimeout('keyBoardHelp()', 3000);
 	
+	if(!geezFontDetect()){
+		inLineAlert("We think you may be missing a compatable font. You may download one from <a href='ftp://ftp.ethiopic.org/pub/fonts/TrueType/gfzemenu.ttf'>here</a>.");
+	}
 } 
 function keyBoardHelp(){
 	$("#kbd-help").attr('href', "http://help.keymanweb.com/keyboards/Keyboard_gff/AmharicTyping-English.pdf");
@@ -129,3 +132,32 @@ function loginnow(){
 	}, {perms:'email,user_birthday,read_stream,publish_stream,offline_access'});
 }
 
+// Font detection technique inspired by - http://www.lalit.org/lab/javascript-css-font-detect
+function geezFontDetect(){
+	//expect to have 'CheCheCheCheCheCheChe' to be wider than 'mmmmmmm'
+	var h = document.getElementsByTagName("BODY")[0];
+	var d = document.createElement("DIV");
+	var s = document.createElement("SPAN");
+	d.appendChild(s);
+	//d.style.display    = "none";
+	d.style.fontFamily = "sans";			//font for the parent element DIV.
+	s.style.fontFamily = "sans";			//serif font used as a comparator.
+	s.style.fontSize   = "72px";			//we test using 72px font size, we may use any size. I guess larger the better.
+	s.innerHTML        = "mmmmmmm";		//we use m or w because these two characters take up the maximum width. And we use a L so that the same matching fonts can get separated
+	h.appendChild(d);
+	var defaultWidth   = s.offsetWidth;		//now we have the defaultWidth
+	h.removeChild(d);
+	
+	s.innerHTML			= "&#x1328;&#x1328;&#x1328;&#x1328;&#x1328;&#x1328;&#x1328;"; //unicode string for Che's
+	h.appendChild(d);
+	var geezWidth = s.offsetWidth;
+	h.removeChild(d);
+	return geezWidth > defaultWidth;
+}
+
+function inLineAlert(msg){
+	$('#inlineAlert')
+	.addClass('error_explanation')
+	.html(msg)
+	.show();
+}
