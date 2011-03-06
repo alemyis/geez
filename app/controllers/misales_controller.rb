@@ -114,5 +114,11 @@ class MisalesController < ApplicationController
     puts @misale.ye
     render  'fbpost'
   end
-  
+    
+  def home
+    respond_to do |format|
+      format.html # index.html.erb
+      #format.xml  { render :xml => @misales }
+    end
+  end
 end

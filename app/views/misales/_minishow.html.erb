@@ -4,7 +4,7 @@
 			<div class='itemid' style='display:none;'>#<%= misale.id %></div>
 			<div style='text-align:center;'>
 				<span class='geeztext headtext'><%= misale.head %></span>
-				<span class='geeztext tailtext <%= @fetan ? "" : "fetanHidden" %>' misale='<%= misale.head %>' onclick='javascript:revealMisale(this, "fetanHidden")'>&nbsp;&nbsp;&nbsp;&nbsp;???&nbsp;&nbsp;&nbsp;&nbsp;</span>
+				<span class='geeztext tailtext questionmark <%= @fetan ? "" : "fetanHidden" %>' misale='<%= misale.head %>' onclick='javascript:revealMisale(this, "fetanHidden")'>???</span>
 				<span class='geeztext tailtext <%= @fetan ? "fetanHidden" : "" %>'><%= misale.tail %></span>
 				<br/><br/>
 				<% unless misale.illustration.empty? then %>

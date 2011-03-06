@@ -416,6 +416,10 @@ img#tinyillustration:hover{
 	border-width: 1px;*/
 }
 
+.questionmark{
+	padding:0 50px 0 50px;
+	cursor:pointer;
+}
 .pagination{
 	width:100%;
 	text-align:center;

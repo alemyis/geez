@@ -11,4 +11,5 @@ class ApplicationController < ActionController::Base
     render :text => {:fetan => session[:fetan]}
     
   end
+  
 end
