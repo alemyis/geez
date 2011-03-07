@@ -10,6 +10,8 @@
 				<% unless misale.illustration.empty? then %>
 					<div class='illustration'>
 					 	<img width='300px' misale='<%= misale.head %>' align='middle' class='<%= @fetan ? "fetanHidden" : "" %>' src='<%= misale.illustration %>' alt='illustration'/>
+						<br/>
+						<span class='illustrationurl'>source: <%= misale.illustration %></span>
 					</div>
 				<% end %>
 				<div class='contentActionLinks'>
@@ -17,7 +19,7 @@
 					<%#= link_to ApplicationHelper.get_value(:edit, :edit), edit_misale_path(misale) %>
 					<span class="comment-count-bubble">
 						<%= link_to misale.comments.count , misale %>
-					  <span class="comment-count-bubble-arrow"></span>
+					  	<span class="comment-count-bubble-arrow"></span>
 					</span>
 				</div>
 				<div class='tweetThisContent'>

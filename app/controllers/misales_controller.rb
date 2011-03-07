@@ -74,12 +74,14 @@ class MisalesController < ApplicationController
     # Hack - Tweak contact id with the one fetched or created above.
     unless params[:misale][:comments_attributes].nil? then
       params[:misale][:comments_attributes].each_value do |comment_value|
-        if comment_value.has_key? :contact_id then
+        if contact.new_record? then #invalid contact info provided, remove comment so it won't be saved
+          comment_value[:comment] = nil
+        elsif comment_value.has_key? :contact_id then
           comment_value[:contact_id] = contact.id.to_s
         end
       end      
     end
-
+    
     respond_to do |format|
       if @misale.update_attributes(params[:misale])
         format.html { redirect_to(@misale, :notice => 'Misale was successfully updated.') }
