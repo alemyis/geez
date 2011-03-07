@@ -1,4 +1,6 @@
 Misaleanegager::Application.routes.draw do
+  resources :contacts
+
   resources :lookups
 
   resources :misales
