@@ -3,7 +3,9 @@ class ChallengesController < ApplicationController
   # GET /challenges.xml
   def index
     page_size = params[:size].nil? ? 1 : params[:size].to_i
-    @challenges = Challenge.all.paginate(:per_page => page_size, :page => params[:page])
+    @page = params[:page] == 'rand' ? rand(Challenge.all.count).to_i : params[:page].to_i 
+    @page = 1 if @page < 1
+    @challenges = Challenge.all.paginate(:per_page => page_size, :page => @page)
     @fetan = !session[:fetan].nil?
     
     # for the active once - init answers
