@@ -8,7 +8,7 @@ module ApplicationHelper
   end
   
   def self.FB_APP_ID
-    '6d47a544aaee664209ae9d0666aa8e39'
+    '196575340361945'
   end 
   
   def self.FB_CANVAS
