@@ -575,15 +575,8 @@ img#tinyillustration:hover{
 }
 
 .actionButton{
-	/*border:1px solid #AE0000;*/
-	border-color: #BFD730 #BFD730 #BFD730 #BFD730;
 	border-radius: 5px;
 	cursor:pointer;
-	-moz-border-radius:5px;
-    -webkit-border-radius:5px;
-	-moz-box-shadow:0 0 5px #888888;
-    -webkit-box-shadow:0 0 5px #888888;
-	box-shadow: 0 0 5px #888888;
 }
 
 .avatar{
