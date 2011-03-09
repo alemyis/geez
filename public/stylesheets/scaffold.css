@@ -376,8 +376,7 @@ img#tinyillustration:hover{
 .faq,
 .activechallenge,
 .closedchallenge,
-.itemid,
-.actionButton {
+.itemid{
 	background-color:#BFD730; 
 }
 
@@ -577,6 +576,8 @@ img#tinyillustration:hover{
 .actionButton{
 	border-radius: 5px;
 	cursor:pointer;
+	background-color: #E1E1E1;
+	border: 1px solid #E1E1E1;
 }
 
 .avatar{

@@ -8,9 +8,9 @@
 				<span class='geeztext tailtext <%= @fetan ? "fetanHidden" : "" %>'><%= misale.tail %></span>
 				<br/><br/>
 				<% unless misale.illustration.empty? then %>
-					<div class='illustration'>
+					<div class='<%= @fetan ? "illustration fetanHidden" : "illustration" %>'>
 						<% if misale.illustration.index('http://www.youtube.com').nil? then %>
-							<img width='300px' misale='<%= misale.head %>' align='middle' class='<%= @fetan ? "fetanHidden" : "" %>' src='<%= misale.illustration %>' alt='illustration'/>
+							<img width='300px' misale='<%= misale.head %>' align='middle' src='<%= misale.illustration %>' alt='illustration'/>
 						<% else %>
 							<iframe title="YouTube video player" width="480" height="390" src='<%= misale.illustration %>' frameborder="0" allowfullscreen></iframe>
 					 	<% end %>

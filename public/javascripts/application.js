@@ -67,7 +67,7 @@ function toggleFetan(){
 	$.ajax({
 	  url: "/fetan/toggle",
 	  complete: function(){
-	    window.location = window.location;
+	  	window.location.reload();
 	  }
 	});	
 }
