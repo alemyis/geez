@@ -1,5 +1,8 @@
 var kbd;
 
+// We may want to position the keyboard in other places besides the default
+// bottom right. But this doesn't seem possible at the moment. Related links:
+// http://tinyurl.com/5rolfzu http://tinyurl.com/685mzgy
 function geezKeyboard() {
 	var inputControls = new Array();
 	$('input[type=text]').each(function(index){
@@ -13,33 +16,13 @@ function geezKeyboard() {
 	kbd = new google.elements.keyboard.Keyboard(
 		[google.elements.keyboard.LayoutCode.ETHIOPIC],
 		inputControls);
-		
-	var bottom = contentSize() + 200;
-	$('#kbd').css('bottom', bottom);
-	
-	setTimeout('keyBoardHelp()', 3000);
+
+  	setTimeout('keyBoardHelp()', 3000);
 	
 	if(!geezFontDetect()){
 		inLineAlert("We think you may be missing a compatable font. You may download one from <a href='ftp://ftp.ethiopic.org/pub/fonts/TrueType/gfzemenu.ttf'>here</a>.");
 	}
 } 
-function keyBoardHelp(){
-	$("#kbd-help").attr('href', "http://help.keymanweb.com/keyboards/Keyboard_gff/AmharicTyping-English.pdf");
-}
-function keyboardInFocus(inputControl){
-	kbd.setVisible(true);
-	var bottom = $(document).height() - inputControl.position().top - inputControl.height();
-	//don't let the keyboard run off the screen on the right
-	var right = $(document).width() - inputControl.position().left - inputControl.width();
-	$('#kbd').css('right', right);
-	$('#kbd').css('bottom', bottom);
-	$('#kbd').show();
-}
-
-function keyboardOutFocus(inputControl){
-	$('#kbd').hide();
-	kbd.setVisible(false);
-}
 
 function tweetThisPage(containerId){
 	var tweetTagContainer = document.getElementById(containerId);
@@ -67,7 +50,7 @@ function toggleFetan(){
 	$.ajax({
 	  url: "/fetan/toggle",
 	  complete: function(){
-	  	window.location.reload();
+	    window.location.reload();
 	  }
 	});	
 }
