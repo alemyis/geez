@@ -286,8 +286,10 @@ border-bottom: 1px solid #ccc;
 }
 
 .search{
-	float:right;
-	padding-top: 10px;
+	position:relative;
+	right:0px;
+	text-align: right;
+	padding-right:10px;
 }
 
 illustration img{
@@ -387,6 +389,7 @@ img#tinyillustration:hover{
 
 .faq{
 	color: #FFFFFF;
+	margin-left:10px;
 }
 
 .challengetitle{

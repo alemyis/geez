@@ -22,10 +22,33 @@ function geezKeyboard() {
 	if(!geezFontDetect()){
 		inLineAlert("We think you may be missing a compatable font. You may download one from <a href='ftp://ftp.ethiopic.org/pub/fonts/TrueType/gfzemenu.ttf'>here</a>.");
 	}
+	
+	//popOutToFullView();
+	
 } 
 
 function keyBoardHelp(){
 	$("#kbd-help").attr('href', "http://help.keymanweb.com/keyboards/Keyboard_gff/AmharicTyping-English.pdf");
+}
+
+// Popout from FB IFrame to full site
+function popOutToFullView(){
+	
+	try{
+		var popout = $('<a></a>')
+						.attr('href', '#')
+						.html('full page')
+						.attr('target', '_new')
+						.css('float', 'right')
+						.css('padding-left', '10px')
+						.insertBefore($('#btn_faq'))
+						.click(function(){
+							window.open(parent.document.getElementById('iframe_canvas').src)
+		});
+	}
+	catch (err){
+		// ignore.
+	}
 }
 
 function tweetThisPage(containerId){

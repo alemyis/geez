@@ -16,10 +16,11 @@
 				<div class='navmenuitem curvy-five top-line-bluegreen top-line-bluegreen-five'><%= link_to ApplicationHelper.get_value(:challenges, 'Challenges'), challenges_path %></div>
 				<div class='navmenuitem curvy-five top-line-bluegreen top-line-bluegreen-five'><%= render :partial => 'misales/fetan' %></div>
 			</div>
-			<input type='button' style='float:right;font-weight:bold' class='faq' onclick='javascript:window.open("/faq.html", "FAQ","height=400,width=800")' value='?'/>
 			<div class='search'>
+				<input id='btn_faq' type='button' style='float:right;font-weight:bold' class='faq' onclick='javascript:window.open("/faq.html", "FAQ","height=400,width=800")' value='?'/>
+				<a href='#' onclick='javascript:inviteFriends()' style='float:right'>invite friends</a>
+				<br/>
 				<%= render :partial => 'misales/search' %>
-				<a href='#' onclick='javascript:inviteFriends()' style='position:absolute;float:right'>invite friends</a>
 			</div>
         </div>
 		<div id='inlineAlert' style='display:none;'></div>
