@@ -14,4 +14,12 @@ module ApplicationHelper
   def self.FB_CANVAS
     'http://50.16.134.117:90'
   end
+  
+  def self.FB_CANVAS_PAGE
+    'http://www.facebook.com/geezchewata'
+  end
+  
+  def self.APPLICATION_NAME
+    "(Ge'ez chewata)"
+  end
 end

@@ -24,6 +24,10 @@ function geezKeyboard() {
 	}
 } 
 
+function keyBoardHelp(){
+	$("#kbd-help").attr('href', "http://help.keymanweb.com/keyboards/Keyboard_gff/AmharicTyping-English.pdf");
+}
+
 function tweetThisPage(containerId){
 	var tweetTagContainer = document.getElementById(containerId);
   	// Create the HTML for out text area
@@ -112,7 +116,11 @@ function loginnow(){
 	  } else {
 	    // user is not logged in
 	  }
-	}, {perms:'email,user_birthday,read_stream,publish_stream,offline_access'});
+	}, {perms:'email'});
+}
+
+function inviteFriends(){
+	FB.ui({method: 'apprequests', title: 'ግእዝ ጨዋታ - ደስታ በደስታ', message: 'ምሳሌያዊ አነጋገሮትን አጥንተዋል?', data: 'geez chewata invite'});
 }
 
 // Font detection technique inspired by - http://www.lalit.org/lab/javascript-css-font-detect
