@@ -16,7 +16,7 @@ module ApplicationHelper
   end
   
   def self.FB_CANVAS_PAGE
-    'http://www.facebook.com/geezchewata'
+    'http://apps.facebook.com/geezchewata'
   end
   
   def self.APPLICATION_NAME
