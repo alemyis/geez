@@ -23,14 +23,7 @@ class MisalesController < ApplicationController
   # GET /misales/1
   # GET /misales/1.xml
   def show
-    @misale = Misale.find(params[:id])
-    @fetan = !session[:fetan].nil?
-    @comment = @misale.comments.build
-    
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @misale }
-    end
+    redirect_to :action => 'index', :page => params[:id]
   end
 
   # GET /misales/new

@@ -26,17 +26,7 @@ class ChallengesController < ApplicationController
   # GET /challenges/1
   # GET /challenges/1.xml
   def show
-    @fetan = !session[:fetan].nil?
-    @challenge = Challenge.find(params[:id])
-    if @challenge.status == 1 then
-      for categorization in @challenge.categorizations do
-        answer = categorization.answers.build(:contact_id => 1)
-      end
-    end
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @challenge }
-    end
+    redirect_to :action => 'index', :page => params[:id]
   end
 
   # GET /challenges/new

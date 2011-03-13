@@ -7,10 +7,20 @@ function geezKeyboard() {
 	var inputControls = new Array();
 	$('input[type=text]').each(function(index){
 		inputControls[index] = $(this).attr('id');
+		$(this).focusin(function(){
+			$(this).css('font-size', 'large');
+		}).focusout(function(){
+			$(this).css('font-size', '');
+		});
 	});
 		
 	$('textarea').each(function(index){
 		inputControls[inputControls.length + index] = $(this).attr('id');
+		$(this).focusin(function(){
+			$(this).css('font-size', 'large');
+		}).focusout(function(){
+			$(this).css('font-size', '');
+		});
 	});
 	
 	kbd = new google.elements.keyboard.Keyboard(
@@ -23,7 +33,7 @@ function geezKeyboard() {
 		inLineAlert("We think you may be missing a compatable font. You may download one from <a href='ftp://ftp.ethiopic.org/pub/fonts/TrueType/gfzemenu.ttf'>here</a>.");
 	}
 	
-	//popOutToFullView();
+	popOutToFullView();
 	
 } 
 
@@ -111,8 +121,6 @@ function frameSize(){
 function contentSize(){
         return $('#page').height() + $('#footer').height() + 200;
 }
-
-
 
 function setLoggedInUser(session){
    $('input[fbKey|="fbuid"]').val(session.uid);
