@@ -1,13 +1,17 @@
-<%= simple_form_for(@misale) do |f| %>
-	<%= render :partial => 'error', :locals => {:misale => @misale} %>
-	
-    <%= f.input :head %>
-	<%= f.input :tail %>
-    <%= f.input :illustration %>
-    <%= f.input :tag %>
-    <%= f.input :ye %>
-    <%= f.input :ne %>
-  <div class="actions">
-    <%= f.button :submit %>
-  </div>
-<% end %>
+<div align='center' class='itemContent'>
+	<div class='misaleheader curvy-five shadow-light-green top-line-bluegreen top-line-bluegreen-ten'>
+		<%= simple_form_for(@misale) do |f| %>
+			<%= render :partial => 'error', :locals => {:misale => @misale} %>
+			
+		    <%= f.input :head %>
+			<%= f.input :tail %>
+		    <%= f.input :illustration %>
+		    <%= f.input :tag %>
+		    <%= f.input :ye %>
+		    <%= f.input :ne %>
+		  <div class="actions">
+		    <%= f.button :submit %>
+		  </div>
+		<% end %>
+	</div>
+</div>

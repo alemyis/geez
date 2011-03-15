@@ -475,8 +475,9 @@ img#tinyillustration:hover{
 	/*float:left;*/
 }
 .contentActionLinks{
+	padding:5px 0 5px 0;
 	width: 100%;
-	text-align:right;
+	text-align:center;
 	font-size:large;
 }
 
@@ -498,16 +499,14 @@ img#tinyillustration:hover{
 }
 
 .comment-count-bubble {
-  /*background-color:#FFEFDD;*/
   border:1px solid #005288;
   margin:0;
   padding:0px 2px 0px 5px;
+  margin-right:5px;
   position:relative;
   font-size:10pt;
   -moz-border-radius:3px;
   -webkit-border-radius:3px;
-  /*-moz-box-shadow:0 0 5px #888888;
-  -webkit-box-shadow:0 0 5px #888888;*/
 }
 
 .contentActionLinks a,

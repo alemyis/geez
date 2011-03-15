@@ -20,15 +20,18 @@
 				<% end %>
 				<div class='contentActionLinks'>
 					<%#= link_to ApplicationHelper.get_value(:link, :link), misale %>
-					<%#= link_to ApplicationHelper.get_value(:edit, :edit), edit_misale_path(misale) %>
+					<% if @admin then %>
+						<%= link_to ApplicationHelper.get_value(:edit, :edit), edit_misale_path(misale) %>
+					<% end %>
 					<span class="comment-count-bubble">
 						<%= link_to misale.comments.count , misale %>
 					  	<span class="comment-count-bubble-arrow"></span>
 					</span>
-				</div>
-				<div class='tweetThisContent'>
 					<%= render :partial => 'misales/fbPost', :locals => { :misale => misale } %>
 					<%= render :partial => 'misales/tweetThisContent', :locals => { :misale => misale } %>
+				</div>
+				<div class='tweetThisContent'>
+					
 				</div>
 			</div>
 		</div>
