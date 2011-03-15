@@ -267,12 +267,10 @@ border-bottom: 1px solid #ccc;
 
 .navmenuitem{
 	background-color: white;
-	margin: 5px 5px 5px 0px;
-	padding: 5px 3px 3px 3px;
+	padding: 5px 10px 3px 10px;
 	float:left;
 	color: #EE2B76;
 	font-size:12pt;
-	width: 100px;
 	text-align: center;
 }
 .navmenuitem a{
@@ -289,6 +287,11 @@ border-bottom: 1px solid #ccc;
 	float:right;
 	text-align: right;
 	padding-right:10px;
+}
+
+.utillinks{
+	position:relative;
+	right:10px;	
 }
 
 illustration img{

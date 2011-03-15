@@ -12,6 +12,8 @@ Misaleanegager::Application.routes.draw do
   match '/misales/:id/fbpost' => 'misales#fbpost', :as => :fbpost_misale
   
   match '/' => 'misales#home'
+  
+  match '/fbcanvas' => 'application#fbcanvas'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

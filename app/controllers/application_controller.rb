@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  protect_from_forgery
+  protect_from_forgery :except => :fbcanvas
   
   def fetan
     if session[:fetan].nil? then 
@@ -12,4 +12,7 @@ class ApplicationController < ActionController::Base
     
   end
   
+  def fbcanvas
+    redirect_to :controller => 'misales', :action => 'index'
+  end
 end

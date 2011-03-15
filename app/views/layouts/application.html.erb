@@ -10,19 +10,20 @@
   <body>
     <div id="page">
       <div>
-        <div style='clear:both;'>
+        <div style='clear:both;border-bottom:3px solid #EE2B76;height:30px;'>
 	    	<div class='navmenu'>
-				<div class='navmenuitem curvy-five top-line-bluegreen top-line-bluegreen-five'><%= link_to ApplicationHelper.get_value(:misales, 'Misales') , misales_path %></div>
-				<div class='navmenuitem curvy-five top-line-bluegreen top-line-bluegreen-five'><%= link_to ApplicationHelper.get_value(:challenges, 'Challenges'), challenges_path %></div>
-				<div class='navmenuitem curvy-five top-line-bluegreen top-line-bluegreen-five'><%= render :partial => 'misales/fetan' %></div>
+				<div class='navmenuitem curvy-five'><%= link_to ApplicationHelper.get_value(:misales, 'Misales') , misales_path %></div>
+				<div class='navmenuitem curvy-five'><%= link_to ApplicationHelper.get_value(:challenges, 'Challenges'), challenges_path %></div>
+				<div class='navmenuitem curvy-five'><%= render :partial => 'misales/fetan' %></div>
 			</div>
 			<div class='search'>
-				<input id='btn_faq' type='button' style='float:right;font-weight:bold' class='faq' onclick='javascript:window.open("/faq.html", "FAQ","height=400,width=800")' value='?'/>
-				<a href='#' onclick='javascript:inviteFriends()' style='float:right'>invite friends</a>
-				<br/>
 				<%= render :partial => 'misales/search' %>
 			</div>
         </div>
+		<div class='utillinks'>
+			<input id='btn_faq' type='button' style='float:right;font-weight:bold' class='faq' onclick='javascript:window.open("/faq.html", "FAQ","height=400,width=800")' value='?'/>
+			<a href='#' onclick='javascript:inviteFriends()' style='float:right'>invite friends</a>
+		</div>
 		<div id='inlineAlert' style='display:none;'></div>
 		<div style='clear:both;'>
 			<%= yield %>
