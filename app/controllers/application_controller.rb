@@ -13,6 +13,10 @@ class ApplicationController < ActionController::Base
   end
   
   def fbcanvas
-    redirect_to :controller => 'misales', :action => 'index'
+    if(params[:fbpost].nil?) then
+      redirect_to :controller => 'misales', :action => 'index'
+    else 
+      redirect_to :controller => 'misales', :action => 'fbpost'
+    end
   end
 end
