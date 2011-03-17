@@ -112,6 +112,7 @@ $(document).ready(function() {
 	  }
 	  FB.Canvas.setSize({ height: frameSize() + 100 });
 	});
+
 });
 
 function frameSize(){
