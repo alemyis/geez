@@ -75,12 +75,14 @@ google.load("elements", "1", {packages: "keyboard"});
 google.setOnLoadCallback(geezKeyboard);
 
 
-function revealMisale(sender, cssClass){
+function revealMisale(sender, cssClass, misaleId){
 	var originator = $(sender);
 	originator.hide();
-	
-	
-	$('.' + cssClass).removeClass(cssClass);
+	$('#tail_' + misaleId).show('slow', function(){
+		$('#illustration_' + misaleId).delay(1000).show('slow', function(){
+			$('#comments_' + misaleId).delay(500).show('slow');
+		})
+	});
 }
 
 function toggleFetan(){

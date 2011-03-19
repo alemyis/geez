@@ -486,8 +486,8 @@ img#tinyillustration:hover{
 	display:none;
 }
 
-.fetan{
-	text-decoration: underline;
+.fetan a{
+	text-decoration: none;
 	cursor:pointer;
 }
 
@@ -555,6 +555,9 @@ img#tinyillustration:hover{
   _border-right-color: pink;
   _filter: chroma(color=pink);
 }
+
+.right {float: right;}
+.left {float: left;}
 
 .next_page{
 	/*float:right;*/

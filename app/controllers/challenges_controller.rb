@@ -6,7 +6,7 @@ class ChallengesController < ApplicationController
     @page = params[:page] == 'rand' ? rand(Challenge.all.count).to_i : params[:page].to_i 
     @page = 1 if @page < 1
     @challenges = Challenge.all.paginate(:per_page => page_size, :page => @page)
-    @fetan = !session[:fetan].nil?
+    @fetan = session[:fetan].nil? || session[:fetan] #default to fetan on
     
     # for the active once - init answers
     for challenge in @challenges do

@@ -3,7 +3,7 @@ class MisalesController < ApplicationController
   # GET /misales.xml
   def index
     @page_size = params[:size].nil? ? 1 : params[:size].to_i
-    @fetan = !session[:fetan].nil?
+    @fetan = session[:fetan].nil? || session[:fetan]
     @page = params[:page] == 'rand' || params[:page].nil? ? rand(Misale.all.count).to_i : params[:page].to_i 
     @page = 1 if @page < 1
     @misales = Misale.search(params[:search]).paginate(:per_page => @page_size, :page => @page)

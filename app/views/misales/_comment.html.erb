@@ -1,4 +1,4 @@
-<div class='<%= @fetan ? "fetanHidden" : "" %>' >
+<div id='comments_<%= misale.id %>' class='<%= @fetan ? "fetanHidden" : "" %>' >
 	<%#<div class='section_header <%= @fetan ? "fetanHidden" : "" % >'>< %= ApplicationHelper.get_value(:comments, :comments) % >:</div>%>
 	<div class='comments'>	
 		<%= simple_form_for(misale) do |f| %>

@@ -1,14 +1,15 @@
 <div>
 	<div align='center' class='itemContent'>
 		<div class='misaleheader curvy-five shadow-light-green top-line-bluegreen top-line-bluegreen-ten' misale='<%= misale.head %>'>
+			<div class='fetan right'><%= render :partial => 'misales/fetan' %></div>
 			<div class='itemid' style='display:none;'>#<%= misale.id %></div>
 			<div style='text-align:center;'>
 				<span class='geeztext headtext'><%= misale.head %></span>
-				<span class='geeztext tailtext questionmark <%= @fetan ? "" : "fetanHidden" %>' misale='<%= misale.head %>' onclick='javascript:revealMisale(this, "fetanHidden")'>???</span>
-				<span class='geeztext tailtext <%= @fetan ? "fetanHidden" : "" %>'><%= misale.tail %></span>
+				<span class='geeztext tailtext questionmark <%= @fetan ? "" : "fetanHidden" %>' misale='<%= misale.head %>' onclick='javascript:revealMisale(this, "fetanHidden", <%= misale.id %>)'>???</span>
+				<span id='tail_<%= misale.id %>' class='geeztext tailtext <%= @fetan ? "fetanHidden" : "" %>'><%= misale.tail %></span>
 				<br/><br/>
 				<% unless misale.illustration.empty? then %>
-					<div class='<%= @fetan ? "illustration fetanHidden" : "illustration" %>'>
+					<div id='illustration_<%= misale.id %>' class='<%= @fetan ? "illustration fetanHidden" : "illustration" %>'>
 						<% if misale.illustration.index('http://www.youtube.com').nil? then %>
 							<img width='300px' misale='<%= misale.head %>' align='middle' src='<%= misale.illustration %>' alt='illustration'/>
 						<% else %>
@@ -18,7 +19,7 @@
 						<span class='illustrationurl'>source: <%= misale.illustration %></span>
 					</div>
 				<% end %>
-				<div class='contentActionLinks'>
+				<div id='share_<%= misale.id %>' class='contentActionLinks'>
 					<%#= link_to ApplicationHelper.get_value(:link, :link), misale %>
 					<% if @admin then %>
 						<%= link_to ApplicationHelper.get_value(:edit, :edit), edit_misale_path(misale) %>
@@ -29,9 +30,6 @@
 					</span>
 					<%= render :partial => 'misales/fbPost', :locals => { :misale => misale } %>
 					<%= render :partial => 'misales/tweetThisContent', :locals => { :misale => misale } %>
-				</div>
-				<div class='tweetThisContent'>
-					
 				</div>
 			</div>
 		</div>
