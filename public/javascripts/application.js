@@ -79,7 +79,7 @@ function revealMisale(sender, cssClass, misaleId){
 	var originator = $(sender);
 	originator.hide();
 	$('#tail_' + misaleId).show('slow', function(){
-		$('#illustration_' + misaleId).delay(1000).show('slow', function(){
+		$('#illustration_' + misaleId).delay(800).show('slow', function(){
 			$('#comments_' + misaleId).delay(500).show('slow');
 		})
 	});
