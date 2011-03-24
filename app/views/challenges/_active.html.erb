@@ -12,9 +12,11 @@
       </ul>
     </div>
   <% end %>
+  	<ol>
 	<% f_challenge.fields_for :categorizations do |f_categorization| %>
 		<%= render 'categorization_fields', :f => f_categorization %>
 	<% end %>
+	</ol>
 	<%= render :partial => 'contacts/contact' %>
 	<div class="actions">
 		<%= f_challenge.button :submit, :value => 'submit', :class => 'actionButton' %>

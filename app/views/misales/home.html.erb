@@ -1,27 +1,36 @@
    <div>
    		<br/>
-   		<br/>
-   		<br/>
       <div>
         <div id="header">
-          <h1>Welcome to Ge'ez games</h1>
+          <h2>Welcome to Ge'ez Chewata</h2>
         </div>
 
         <div id="getting-started" style='text-align:left;' class='misaleheader curvy-five shadow-light-green top-line-bluegreen top-line-bluegreen-ten'>
-          <h1>Getting started</h1>
-
+		<h2>
+			Hey, so how well do you know your language? 
+		</h2>
+		<h2>
+			Have fun recalling some of the constructs...or show off your chops &#x1306;. 
+		</h2>
+		<h2>
+			Start out with "Misaleyawi Anegageroch" - &#x121D;&#x1233;&#x120C;&#x12EB;&#x12CA; &#x12A0;&#x1290;&#x130B;&#x1308;&#x122E;&#x127D;
+		</h2>
+          <h2>Getting started</h2>
           <ul>
             <li>
             	<h2>
                (<%= ApplicationHelper.get_value(:geez, :geez) %>) - Do you read the word Ge'ez within the brackets? 
-			  		<br/> <i>Yes.</i> - You are done with first step.
-					<br/> <i>No, I see boxes.</i> - No worries, it's just that you are missing Ge'ez font from your system. Get it from <a href='ftp://ftp.ethiopic.org/pub/fonts/TrueType/gfzemenu.ttf' target='_blank'>here</a>.
+			  		<br/> &nbsp;&nbsp;<i>Yes.</i> - Great! You have the font you need.
+					<br/> &nbsp;&nbsp;<i>No, I see boxes.</i> - No worries, you are likely missing a Ge'ez font. Get one from <a href='ftp://ftp.ethiopic.org/pub/fonts/TrueType/gfzemenu.ttf' target='_blank'>here</a>.
 			  </h2>
             </li>
 
             <li>
-              <h2>Jump in   <a href='/challenges' class='actionButton curvy-five shadow-light-green top-line-bluegreen'><%= ApplicationHelper.get_value(:challenges, :challenges) %></a> | <a href='/misales' class='actionButton curvy-five shadow-light-green top-line-bluegreen'><%= ApplicationHelper.get_value(:misales, :misales) %></a></h2>
-            </li>
+              <h2>Jump in
+			  	<br/>&nbsp;&nbsp;<a href='/challenges' class='actionButton curvy-five shadow-light-green top-line-bluegreen'><%= ApplicationHelper.get_value(:challenges, :challenges) %></a> - Fill in the blank type of questions.
+				<br/>&nbsp;&nbsp;<a href='/misales' class='actionButton curvy-five shadow-light-green top-line-bluegreen'><%= ApplicationHelper.get_value(:misales, :misales) %></a> - Browse content. Try the game (&#x1328;&#x12CB;&#x1273;) mode. It's fun!
+              </h2>
+			</li>
           </ul>
         </div>
       </div>
