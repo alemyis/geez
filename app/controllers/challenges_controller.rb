@@ -87,7 +87,7 @@ class ChallengesController < ApplicationController
         format.html { redirect_to(@challenge, :notice => 'Challenge was successfully updated.') }
         format.xml  { head :ok }
       else
-        format.html { render :action => "edit" }
+        format.html { redirect_to(@challenge, :error => 'Unsuccessful submission.') }
         format.xml  { render :xml => @challenge.errors, :status => :unprocessable_entity }
       end
     end
