@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
   
   def fbcanvas
     if(params[:fbpost].nil?) then
-      redirect_to :controller => 'misales', :action => 'index'
+      redirect_to :controller => 'misales', :action => 'home'
     else 
       #redirect_to :controller => 'misales', :action => 'fbpost'
       @misale = Misale.find(params[:fbpost])
