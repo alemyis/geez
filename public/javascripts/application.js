@@ -7,20 +7,20 @@ function geezKeyboard() {
 	var inputControls = new Array();
 	$('input[type=text]').each(function(index){
 		inputControls[index] = $(this).attr('id');
-		$(this).focusin(function(){
-			$(this).css('font-size', 'large');
-		}).focusout(function(){
-			$(this).css('font-size', '');
-		});
+		//$(this).focusin(function(){
+		//	$(this).css('font-size', 'large');
+		//}).focusout(function(){
+		//	$(this).css('font-size', '');
+		//});
 	});
 		
 	$('textarea').each(function(index){
 		inputControls[inputControls.length + index] = $(this).attr('id');
-		$(this).focusin(function(){
-			$(this).css('font-size', 'large');
-		}).focusout(function(){
-			$(this).css('font-size', '');
-		});
+		//$(this).focusin(function(){
+		//	$(this).css('font-size', 'large');
+		//}).focusout(function(){
+		//	$(this).css('font-size', '');
+		//});
 	});
 	
 	kbd = new google.elements.keyboard.Keyboard(
@@ -45,6 +45,10 @@ function keyBoardHelp(){
 function popOutToFullView(){
 	
 	try{
+		var isInIFrame = (window.location != window.parent.location) ? true : false;
+		
+		if(!isInIFrame) return;
+		
 		var popout = $('<a></a>')
 						.attr('href', '#')
 						.html('full page')

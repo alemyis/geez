@@ -42,8 +42,8 @@ border-radius: 10px;
 -webkit-box-shadow:0 0 10px #BFD730;
 box-shadow: 0 0 10px #BFD730;
 padding: 5px;
-	background-image: url(/images/bg2.png);
-	background-repeat: no-repeat;
+	/*background-image: url(/images/bg2.png);
+	background-repeat: no-repeat;*/
 }
 
 #content {
