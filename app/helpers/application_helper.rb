@@ -12,7 +12,7 @@ module ApplicationHelper
   end 
   
   def self.FB_CANVAS
-    'http://50.16.134.117:90'
+    'http://www.geezchewata.com/'
   end
   
   def self.FB_CANVAS_PAGE
