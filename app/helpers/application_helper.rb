@@ -12,7 +12,7 @@ module ApplicationHelper
   end 
   
   def self.FB_CANVAS
-    'http://www.geezchewata.com/'
+    'http://www.geezchewata.com'
   end
   
   def self.FB_CANVAS_PAGE
