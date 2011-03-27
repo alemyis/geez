@@ -87,6 +87,8 @@ function revealMisale(sender, cssClass, misaleId){
 			$('#comments_' + misaleId).delay(500).show('slow');
 		})
 	});
+	
+	FB.Canvas.setSize({ height: frameSize() + 100 });
 }
 
 function toggleFetan(){
