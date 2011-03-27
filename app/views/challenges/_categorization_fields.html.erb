@@ -1,10 +1,10 @@
-<li>
+<tr>
 	<% f.fields_for :answers do |f_answer| %>
 		<% if f_answer.object.new_record? then %>
-			<%= f.object.misale.head %>
-			<%= render 'answer_fields', :f => f_answer, :head => f.object.misale.head %>
+			<%#= render 'answer_fields', :f => f_answer, :categorization => f.object %>
+			<%= render 'answer_fields_match', :f => f_answer, :categorization => f.object %>
 		<% end %>
 	<% end %>
 	<%= f.hidden_field :misale_id, :value => f.object.misale_id %>
 	<%= f.hidden_field :position, :value => f.object.position %>
-</li>
+</tr>

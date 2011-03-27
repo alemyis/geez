@@ -1,0 +1,7 @@
+<%= f.hidden_field :contact_id, :value => 1 %>
+<td width='50%'>
+	<%= categorization.misale.head %>
+</td>
+<td>
+	<%= f.input :response, :collection => categorization.misale_tails, :include_blank => true, :label => false %>
+</td>
