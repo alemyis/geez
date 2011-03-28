@@ -2,10 +2,10 @@ class ApplicationController < ActionController::Base
   protect_from_forgery :except => :fbcanvas
   
   def fetan
-    if session[:fetan].nil? || session[:fetan] == false then 
-      session[:fetan] = true
-    else
+    if session[:fetan].nil? || session[:fetan] == true then 
       session[:fetan] = false
+    else
+      session[:fetan] = true
     end
     
     render :text => {:fetan => session[:fetan]}
