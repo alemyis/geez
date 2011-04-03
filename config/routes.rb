@@ -7,6 +7,8 @@ Misaleanegager::Application.routes.draw do
 
   resources :challenges
 
+  resources :about
+
   match '/fetan/toggle' => 'application#fetan'
   
   match '/misales/:id/fbpost' => 'misales#fbpost', :as => :fbpost_misale
