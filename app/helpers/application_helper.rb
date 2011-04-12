@@ -20,6 +20,6 @@ module ApplicationHelper
   end
   
   def self.APPLICATION_NAME
-    "(Ge'ez chewata)"
+    "&#x130D;&#x12D5;&#x12DD &#x1328;&#x12CB;&#x1273;(Ge'ez chewata)"
   end
 end
