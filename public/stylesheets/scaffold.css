@@ -5,10 +5,18 @@ body { background-color: #fff; color: #333;
 }
 
 body, p, ol, ul, td {
-  font-family: "Lucida Grande", "Bitstream Vera Sans", verdana, arial, helvetica, sans-serif;
+  font-family: "gfzemenu", "Lucida Grande", "Bitstream Vera Sans", verdana, arial, helvetica, sans-serif;
   font-size:   13px;
   line-height: 18px;
 }
+
+@font-face
+{
+font-family: gfzemenu;
+src: url('.\gfzemenu.ttf'),
+     url('.\gfzemenu.ttf'); /* IE */
+}
+
 body{
   	/*background-color: #f0f0f0;*/
 }
