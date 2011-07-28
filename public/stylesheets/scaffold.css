@@ -622,3 +622,15 @@ background-repeat: no-repeat;
 background-position: -260px 0px;
 }
 
+.team-member{
+  text-align: center;
+}
+
+.team-member left{
+  float: left;
+}
+
+.team-member right{
+  float: right;
+}
+
