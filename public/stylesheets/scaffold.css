@@ -13,8 +13,8 @@ body, p, ol, ul, td {
 @font-face
 {
 font-family: gfzemenu;
-src: url('.\gfzemenu.ttf'),
-     url('.\gfzemenu.ttf'); /* IE */
+src: url('gfzemenu.ttf'),
+     url('gfzemenu.ttf'); /* IE */
 }
 
 body{
@@ -376,6 +376,7 @@ img#tinyillustration:hover{
 	box-shadow: 0 0 5px #BFD730;
 }
 
+.misaleBody,
 .misaleheader,
 .activechallenge,
 .closedchallenge{
@@ -434,7 +435,7 @@ img#tinyillustration:hover{
 }
 
 .misaleBody{
-	margin: 10px 10px 0 10px;
+	margin: 10px 10px 0 130px;
 	/*border-color: transparent #FFCFC6 #FFCFC6 #FFCFC6;
 	border-style: solid;
 	border-width: 1px;*/

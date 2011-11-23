@@ -18,6 +18,7 @@
 				<div class='misaleBody'>
 					<%= render :partial => 'misales/answers', :locals => { :misale => categorization.misale } %>
 					<br/>
+					<%= render :partial => "misales/comment", :locals => { :misale => categorization.misale  } %>
 				</div>
 			</p>
 		<% end %>	

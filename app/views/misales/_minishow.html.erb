@@ -25,7 +25,7 @@
 						<%= link_to ApplicationHelper.get_value(:edit, :edit), edit_misale_path(misale) %>
 					<% end %>
 					<span class="comment-count-bubble">
-						<%= link_to misale.comments.count , misale %>
+						<span onclick='javascript:revealCommentsAndAnswers(<%= misale.id %>)'><%= misale.comments.count + misale.answers.count %></span>
 					  	<span class="comment-count-bubble-arrow"></span>
 					</span>
 					<%= render :partial => 'misales/fbPost', :locals => { :misale => misale } %>

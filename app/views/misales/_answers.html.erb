@@ -1,7 +1,7 @@
-<div misale='<%= misale.head %>' class='<%= @fetan ? "hidden" : "" %>'>
+<div id="answers_<%= misale.id %>" misale='<%= misale.head %>' class='<%= @fetan ? "hidden" : "" %>'>
 	<% for categorization in misale.categorizations %>
 		<%#<div class='section_header'><%= ApplicationHelper.get_value(:responses, :responses)  >:</div>%>
-		<div class='comment'>
+		<div class='answers'>
 		<% for answer in categorization.answers %>
 			<%= render :partial => 'contacts/user', :locals => {:u => answer.contact, :d => answer.created_at } %>
 			<div class="comment-bubble">

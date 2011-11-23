@@ -84,11 +84,26 @@ function revealMisale(sender, cssClass, misaleId){
 	originator.hide();
 	$('#tail_' + misaleId).show('slow', function(){
 		$('#illustration_' + misaleId).delay(800).show('slow', function(){
-			$('#comments_' + misaleId).delay(500).show('slow');
+			revealCommentsAndAnswers(misaleId);
 		})
 	});
 	
-	FB.Canvas.setSize({ height: frameSize() + 100 });
+	if (FB) {
+		FB.Canvas.setSize({
+			height: frameSize() + 100
+		});
+	}
+}
+
+
+function revealCommentsAndAnswers(misaleId){
+	$('#answers_' + misaleId).delay(500).show('slow');
+	$('#comments_' + misaleId).delay(500).show('slow');
+	if (FB) {
+		FB.Canvas.setSize({
+			height: frameSize() + 100
+		});
+	}
 }
 
 function toggleFetan(){
@@ -102,24 +117,28 @@ function toggleFetan(){
 
 $(document).ready(function() {
  	//tweetThisPage('socialMedia');
-	
-	FB.init({
-		appId  : '196575340361945', //'6962156513',
-		status : true, // check login status
-		cookie : true, // enable cookies to allow the server to access the session
-		xfbml  : true  // parse XFBML
-	});
-
-	FB.getLoginStatus(function(response) {
-	  if (response.session) {
-	   	setLoggedInUser(response.session);
-	  } else {
-	  	//Don't force login. Let user trigger this action. 
-	    //loginnow();
-	    // no user session available, someone you dont know
-	  }
-	  FB.Canvas.setSize({ height: frameSize() + 100 });
-	});
+	if (FB) {
+		FB.init({
+			appId: '196575340361945', //'6962156513',
+			status: true, // check login status
+			cookie: true, // enable cookies to allow the server to access the session
+			xfbml: true // parse XFBML
+		});
+		
+		FB.getLoginStatus(function(response){
+			if (response.session) {
+				setLoggedInUser(response.session);
+			}
+			else {
+			//Don't force login. Let user trigger this action. 
+			//loginnow();
+			// no user session available, someone you dont know
+			}
+			FB.Canvas.setSize({
+				height: frameSize() + 100
+			});
+		});
+	}
 
 });
 
