@@ -16,6 +16,8 @@ Misaleanegager::Application.routes.draw do
   match '/' => 'misales#home'
   
   match '/fbcanvas' => 'application#fbcanvas'
+  
+  match '/oqpi' => 'application#tweet'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

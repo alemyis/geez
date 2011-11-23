@@ -25,4 +25,19 @@ class ApplicationController < ActionController::Base
       render  :partial => '/misales/unload'
     end
   end
+  
+  def tweet
+    # Certain methods require authentication. To get your Twitter OAuth credentials,
+    # register an app at http://dev.twitter.com/apps
+    Twitter.configure do |config|
+    end
+
+    # Initialize your Twitter client
+    client = Twitter::Client.new
+
+    # Post a status update
+    client.update(params[:message], {:lat => params[:lat], :long => params[:long]})
+    
+    render :text => 'done'
+  end
 end

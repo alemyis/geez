@@ -9,6 +9,8 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 gem "simple_form"  
 gem 'will_paginate', '3.0.pre2'
 
+gem "twitter", "~> 1.7.2"
+
 # Use unicorn as the web server
 # gem 'unicorn'
 
