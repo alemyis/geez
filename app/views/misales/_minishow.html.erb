@@ -20,7 +20,6 @@
 					</div>
 				<% end %>
 				<div id='share_<%= misale.id %>' class='contentActionLinks'>
-					<%#= link_to ApplicationHelper.get_value(:link, :link), misale %>
 					<% if @admin then %>
 						<%= link_to ApplicationHelper.get_value(:edit, :edit), edit_misale_path(misale) %>
 					<% end %>
